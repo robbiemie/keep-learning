@@ -4,6 +4,7 @@
  * 示例： 
  * root = [3,9,20,null,null,15,7]
  * 最小深度: 2
+ * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/submissions/
  */
 
 /**
