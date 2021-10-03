@@ -57,6 +57,12 @@
         this.heap[0] = this.heap.pop()
         this.compareChild(0)
     }
+    peek() {
+        return this.heap[0]
+    }
+    size() {
+        return this.heap.length
+    }
 }
 
 let heap = new MinHeap()
