@@ -35,7 +35,7 @@ class MinHeap {
 }
 
 let heap = new MinHeap()
-
+// 插入元素
 heap.insert(2)
 heap.insert(3)
 heap.insert(1)
