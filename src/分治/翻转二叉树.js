@@ -21,13 +21,17 @@
  */
 var invertTree = function(root) {
     function traverse(tree) {
-        if(!tree) return
+        if(!tree) return null
+        // 分
+        let left = traverse(tree.left)
+        let right = traverse(tree.right)
+        
+        let node = left
+        // 翻转
+        tree.left = right
+        tree.right = node
         // 返回翻转后的 tree
-        return {
-            val: tree.val,
-            left: traverse(tree.right),
-            right: traverse(tree.left)
-        }
+        return tree
     }
 
     return traverse(root)
