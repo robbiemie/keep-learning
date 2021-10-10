@@ -2,7 +2,7 @@
 
 Promise.prototype.allSettled = function (...args) {
     let arr = []
-    return new Promise(resolve => {
+    const promise =  new Promise(resolve => {
         args.forEach((promise,index) => {
             promise.then(res => {
                 arr[index] = ({
@@ -21,6 +21,7 @@ Promise.prototype.allSettled = function (...args) {
             })
         })
     })
+    return promise
 }
 
 

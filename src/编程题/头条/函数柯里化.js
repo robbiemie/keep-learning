@@ -4,22 +4,23 @@
 // sum(1)(2)(3)(4).sumOf(); //10
 // sum(2)(4, 1)(2).sumOf(); //9
 
-function add(args) {
-    return args.reduce((total, cur) => {
-        return total + cur 
-    }, 0)
-}
-
-function sum(...args) {
-    let arr = args
-    const fn = function (...args) {
-        arr = arr.concat(args)
+function sum() {
+    let args = Array.from(arguments)
+    const fn = function () {
+        args = args.concat(Array.from(arguments))
         return fn
     }
     fn.sumOf = () => {
-        return add(arr)
+        // 求和函数
+        return args.reduce((prev,cur) => {
+            return prev + cur
+        })
     }
+
     return fn
 }
 
-console.log(sum(1, 2, 3)(2).sumOf())
+console.log(sum(1,2,3).sumOf())
+console.log(sum(2,3)(2).sumOf())
+console.log(sum(1)(2)(3)(4).sumOf())
+console.log(sum(2)(4,1)(2).sumOf())
