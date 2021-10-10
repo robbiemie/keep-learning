@@ -5,9 +5,8 @@
 // sum(2)(4, 1)(2).sumOf(); //9
 
 function add(args) {
-    let value = 0
     return args.reduce((total, cur) => {
-        return total += cur 
+        return total + cur 
     }, 0)
 }
 
