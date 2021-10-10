@@ -1,23 +1,38 @@
-function reverse(str = '') {
-    if(typeof str !== 'string') throw new Error('Type must is String')
-    return str.split('').reverse().join('')
-}
-let add = (num1, num2) => {
-    let str1 = reverse(`${num1}`)
-    let str2 = reverse(`${num2}`)
+let addStrings = (num1, num2) => {
+    let str1 = String(num1)
+    let str2 = String(num2)
+    let max = Math.max(str1.length, str2.length)
+    let result = new Array(max + 1).fill(0)
 
-    let len1 = str1.length
-    let len2 = str2.length
-
-    let len = len1 > len2 ? len1 : len2
-    let str = ''
-    let isOver10 = false
-    let i = 0
-    let j = 0
-
-    while(i < len1 || j < len2) {
-
+    let i = str1.length - 1
+    let j = str2.length - 1
+    let curIndex = 0    
+    while((i >= 0 && j >= 0)) {
+        let value = result[curIndex] + Number(str1[i]) + Number(str2[j])
+        result[curIndex] = value % 10
+        result[curIndex + 1] = Math.floor(value / 10)
+        i--
+        j--
+        curIndex++
     }
-
-    return str
+    while(i>=0) {
+        value = result[curIndex] + Number(str1[i])
+        result[curIndex] = value % 10
+        result[curIndex + 1] = Math.floor(value / 10)
+        i--
+        curIndex++
+    }
+    while(j>=0) {
+        value = result[curIndex] + Number(str2[j])
+        result[curIndex] = value % 10
+        result[curIndex + 1] = Math.floor(value / 10)
+        j--
+        curIndex++
+    }
+    if(result[curIndex] === 0) {
+        return result.reverse().slice(1).join('')
+    }
+    return result.reverse().join('')
 }
+
+console.log(addStrings(456,77))
