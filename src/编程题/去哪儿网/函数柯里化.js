@@ -13,7 +13,7 @@ const curry = function (f) {
         // 存入参数
         args = args.concat(Array.from(arguments))
         if(arguments.length === 0) {
-            add(...args)
+            f(...args)
         }
         return fn
     }
