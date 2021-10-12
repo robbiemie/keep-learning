@@ -8,6 +8,12 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
- var intersection = function(nums1, nums2) {
-
+var intersection = function(nums1, nums2) {
+    let set = new Set()
+    nums1.forEach(item => {
+        if(nums2.includes(item)) {
+            set.add(item)
+        }
+    })
+    return Array.from(set)
 };
