@@ -28,6 +28,6 @@ var generateParenthesis = function(n) {
         }
     }
 
-    generate(lCount, rCount, [])
+    generate(0, 0, [])
     return result
 };
