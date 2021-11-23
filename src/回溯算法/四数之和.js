@@ -10,15 +10,11 @@
  * @param {number} target
  * @return {number[][]}
  */
-var fourSum = function(nums, target) {
-    
+ var fourSum = function(nums, target) {
     if(nums.length < 4) return []
-    
     nums.sort((a,b) => a-b)
-    
     const obj = {}
     const result = []
-    
     function add(list = [],start,end, sum = 0) {
         if(list.length > 4) return
         if(sum === target && list.length === 4) {
@@ -42,18 +38,19 @@ var fourSum = function(nums, target) {
             startIndex++
         }
     }
-
-    if(nums[0] === nums[nums.length -1]) {
-        nums = nums.slice(0,4)
-    }
-
-    for(let i=0;i<nums.length;i++) {
-        add([].concat(nums[i]),i + 1, nums.length ,nums[i])
+    let startIndex = 0
+    let endIndex = nums.length
+    while(startIndex < endIndex) {
+        if(nums[startIndex] === nums[endIndex -1] && (endIndex - startIndex > 4)) {
+            endIndex = startIndex + 4
+        }
+        add([].concat(nums[startIndex]),startIndex + 1, endIndex,nums[startIndex])
+        startIndex++
     }
 
     return result
 };
 // @lc code=end
-let result = fourSum([2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
-, 8)
-debugger
+let result = fourSum([1,0,-1,0,-2,2]
+    , 0)
+// debugger
