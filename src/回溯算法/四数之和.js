@@ -18,9 +18,8 @@
     function add(list = [],start,end, sum = 0) {
         if(list.length > 4) return
         if(sum === target && list.length === 4) {
-            list.sort((a,b) => a - b)
             if(!obj[`${list.join('')}`]) {
-                obj[`${list.join('')}`] = list
+                obj[`${list.join('')}`] = 1
                 result.push(list)
             }
             return
