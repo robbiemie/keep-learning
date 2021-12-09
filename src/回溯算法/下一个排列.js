@@ -42,8 +42,6 @@ var nextPermutation = function(nums) {
             }
         }
     }
-    debugger
-
 };
 // @lc code=end
 
