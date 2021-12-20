@@ -11,33 +11,53 @@
  */
 
 var isValidSudoku = function (board) {
-    const row = Array.from(Array(9),()=>({}))
-    const col = Array.from(Array(9),()=>({}))
-    const block = Array.from(Array(9),()=>({}))
-    for(let i=0;i<board.length;i++){
-        for(let j=0;j<board.length;j++){
-        let c = board[i][j]
-        if(c==='.') continue
-        if(row[i][c]||col[j][c]) return false
-        row[i][c] = 1
-        col[j][c] = 1
-        const ii = ((~~(i/3))*3)+(~~(j/3))
-        if(block[ii][c]) return false
-        block[ii][c] = 1
+    let result = true
+    const cols = board.length
+    const rows = board[0].length
+    const sets = []
+    const box = [[],[],[]] // 3x3
+
+    for(let i=0;i<rows;i++) {
+        let set = new Set()
+        for(let j=0;j<cols;j++) {
+            // rule1
+            let value = board[i][j]
+            if(value !== '.') {
+                if(set.has(value)) return false
+                set.add(value)
+                // rule3
+                const r = Math.floor(i / 3)
+                const l = Math.floor(j / 3)
+                if(!box[r][l]) {
+                    box[r][l] = new Set()
+                }
+                if(box[r][l].has(value)) return false
+                box[r][l].add(value)
+            }
+            // rule2
+            let value1 = board[j][i]
+            if(value1 !== '.') {
+                if(!sets[i]) {
+                    sets[i] = new Set()
+                }
+                if(sets[i].has(value1)) return false
+                sets[i].add(value1)
+            }
+
         }
     }
-    return true
+    return result
 };
 // @lc code=end
 
 isValidSudoku([
- ["5","3",".",".","7",".",".",".","."]
-,["6",".",".","1","9","5",".",".","."]
-,[".","9","8",".",".",".",".","6","."]
-,["8",".",".",".","6",".",".",".","3"]
-,["4",".",".","8",".","3",".",".","1"]
-,["7",".",".",".","2",".",".",".","6"]
-,[".","6",".",".",".",".","2","8","."]
-,[".",".",".","4","1","9",".",".","5"]
-,[".",".",".",".","8",".",".","7","9"]
-])
+[".",".",".",".","5",".",".","1","."],
+[".","4",".","3",".",".",".",".","."],
+[".",".",".",".",".","3",".",".","1"],
+["8",".",".",".",".",".",".","2","."],
+[".",".","2",".","7",".",".",".","."],
+[".","1","5",".",".",".",".",".","."],
+[".",".",".",".",".","2",".",".","."],
+[".","2",".","9",".",".",".",".","."],
+[".",".","4",".",".",".",".",".","."]]
+)
