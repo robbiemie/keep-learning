@@ -17,10 +17,10 @@ var isMatch = function(s, p) {
   let pIndex = -1
 
   while(i < s.length) {
-    if(j < s.length && (s[i] === p[j] || p[j] === '?')) {
+    if(j < p.length && (s[i] === p[j] || p[j] === '?')) {
       i++
       j++
-    } else if(j < s.length && p[j] === '*') {
+    } else if(j < p.length && p[j] === '*') {
       sIndex = i
       pIndex = j
       j++
@@ -33,10 +33,13 @@ var isMatch = function(s, p) {
       return false
     }
   }
-  return true
+  while(j < p.length && p[j] === '*') {
+    j++
+  }
+  return j === p.length
 };
 // @lc code=end
 
-let rs = isMatch('acdcb', 'a*c?b')
+let rs = isMatch('c', "*?*")
 
 console.log(rs)
