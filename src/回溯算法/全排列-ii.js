@@ -24,11 +24,14 @@ var permuteUnique = function(nums) {
       }
       return
     }
-
+    let obj = {}
     for(let i=0;i<arr2.length;i++) {
-      let temp = arr2.slice()
-      temp.splice(i,1)
-      fn(arr1.concat(arr2[i]),temp)
+      if(!obj[arr2[i]]) {
+        obj[arr2[i]] = 1
+        let temp = arr2.slice()
+        temp.splice(i,1)
+        fn(arr1.concat(arr2[i]),temp)
+      }
     }
 
   }
