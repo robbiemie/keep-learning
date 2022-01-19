@@ -14,19 +14,10 @@ var groupAnagrams = function(strs) {
 
   strs.forEach(item => {
     let arr = item.split('')
-    arr.sort((a,b) => a.localeCompare(b))
-    let key = arr.join('')
-    if(!map[key]) {
-      map[key] = [item]
-    } else {
-      map[key].push(item)
-    }
+    const key = arr.sort().join('');
+    (map[key] || (map[key] = [])).push(item)
   })
-  let list = []
-  Object.values(map).forEach(item => {
-    list.push(item)
-  })
-  return list
+  return Object.values(map)
 };
 // @lc code=end
 
