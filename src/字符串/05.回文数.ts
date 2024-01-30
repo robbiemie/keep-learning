@@ -1,6 +1,4 @@
 function isPalindrome(x: number): boolean {
-  let isValid = false;
-
   let str =  `${x}`;
 
   let start = 0;
@@ -20,8 +18,6 @@ function isPalindrome(x: number): boolean {
 };
 
 function isPalindrome1(x: number): boolean {
-  let isValid = false;
-
   let str =  `${x}`;
 
   let arr = str.split('');
