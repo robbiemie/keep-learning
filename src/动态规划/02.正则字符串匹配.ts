@@ -1,5 +1,5 @@
 function isMatch(s: string, p: string): boolean {
-  let dp = [];
+  let dp:boolean[][] = [];
   // 初始化动态规划数组
   for (let i = 0; i <= s.length; i++) {
       dp[i] = new Array(p.length + 1).fill(false);
