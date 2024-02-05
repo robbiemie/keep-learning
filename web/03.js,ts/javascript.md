@@ -522,3 +522,137 @@ console.log(name) //name is not defined
 - 变量可以通过 `函数参数的形式` 传入，避免使用默认的[[scope]]向上查找
 - 使用setTimeout包裹，通过第三个参数传入
 - 使用 `块级作用域`，让变量成为自己上下文的属性，避免共享
+
+## ES6 Generator 函数
+
+> ES6 中的 Generator 函数是一种特殊类型的函数，它允许你在函数执行过程中暂停并恢复。Generator 函数通过使用 function* 语法进行声明，并且在函数体内使用 yield 关键字来控制执行流。这使得你可以按需生成一系列的值，而不必一次性生成所有值，从而更灵活地控制异步流程或迭代过程。
+
+以下是 Generator 函数的主要特性和使用方式：
+
+1. 声明 Generator 函数：
+
+```js
+function* myGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+```
+
+使用 function* 关键字声明 Generator 函数，函数体内可以包含多个 yield 表达式，每个 yield 表达式表示一次暂停和生成的点。
+
+2. 生成器对象：
+
+调用 Generator 函数并不会立即执行函数体，而是返回一个生成器对象，该对象符合可迭代协议（Iterable Protocol）。
+
+```js
+const generator = myGenerator();
+```
+
+3. 迭代生成器：
+
+使用 next() 方法迭代生成器，每次调用 next() 时，生成器会执行到下一个 yield 表达式，将 yield 后面的值作为结果返回，同时暂停执行。
+
+```js
+console.log(generator.next()); // { value: 1, done: false }
+console.log(generator.next()); // { value: 2, done: false }
+console.log(generator.next()); // { value: 3, done: false }
+console.log(generator.next()); // { value: undefined, done: true }
+```
+
+当生成器函数执行完毕时，done 为 true，value 为 undefined。
+
+
+4. 传递参数给 Generator：
+
+通过 next() 方法传递参数给生成器函数。
+
+```js
+function* generatorWithParam() {
+  const x = yield;
+  const y = yield x + 1;
+  yield y + 2;
+}
+
+const generator = generatorWithParam();
+console.log(generator.next());      // { value: undefined, done: false }
+console.log(generator.next(2));     // { value: 3, done: false }
+console.log(generator.next(3));     // { value: 5, done: false }
+console.log(generator.next());      // { value: undefined, done: true }
+```
+注意，第一次调用 next() 时不能传递参数给生成器，因为在第一次调用时生成器还没有执行到第一个 yield 表达式。
+
+5. Generator 的迭代：
+
+Generator 对象可以通过 for...of 循环进行迭代，或者通过扩展运算符 ... 将生成器转为数组。
+
+```js
+function* countToFive() {
+  yield 1;
+  yield 2;
+  yield 3;
+  yield 4;
+  yield 5;
+}
+
+const generator = countToFive();
+
+for (const value of generator) {
+  console.log(value);
+}
+// 输出：
+// 1
+// 2
+// 3
+// 4
+// 5
+
+// 或者将生成器转为数组
+const arrayFromGenerator = [...countToFive()];
+```
+
+Generator 函数的主要优势在于它可以使异步代码更易于理解和管理，同时还能方便地实现惰性计算和迭代。Generator 函数在处理异步任务时，通过 yield 暂停执行，可以更自然地表达异步代码的逻辑。
+
+
+### Generator 函数和 async...await 异同
+
+> 他们是 JavaScript 中用于处理异步编程的两种不同机制。虽然它们的目标都是简化异步代码的编写和理解，但它们之间存在一些关键的异同点：
+
+
+Generator 函数：
+
+1. 基于迭代器： Generator 函数是基于迭代器协议的，使用 yield 关键字来实现在函数执行过程中的暂停和恢复。每次调用 generator.next() 都会执行到下一个 yield。
+2. 手动控制迭代： 开发者需要手动调用 generator.next() 来推进生成器的执行。这使得可以更细粒度地控制异步流程。
+3. 可以生成多个值： Generator 函数可以通过多次调用 yield 来生成多个值，形成一个可迭代的序列。
+
+```js
+function* exampleGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const generator = exampleGenerator();
+console.log(generator.next()); // { value: 1, done: false }
+console.log(generator.next()); // { value: 2, done: false }
+console.log(generator.next()); // { value: 3, done: false }
+console.log(generator.next()); // { value: undefined, done: true }
+```
+
+async...await 函数：
+1. 基于 Promise A+： async...await 是基于 Promise 的异步编程机制，用于更方便地处理异步代码，消除回调地狱。
+2. 自动控制迭代： async 函数内部使用 await 关键字来等待异步操作完成，而不需要手动控制迭代。await 会暂停函数执行，直到 Promise 解决（或拒绝）。
+3. 只能生成一个值： async 函数通常只能返回一个值，而不是像 Generator 函数那样可以通过多次 yield 生成多个值。如果需要处理多个异步操作，可以使用 Promise.all 等方法。
+
+```js
+async function exampleAsync() {
+  const result1 = await asyncOperation1();
+  const result2 = await asyncOperation2();
+  return result1 + result2;
+}
+```
+
+
+
+
+
