@@ -652,7 +652,70 @@ async function exampleAsync() {
 }
 ```
 
+## this 对象
+
+> 在 JavaScript 中，this 是一个关键字，表示当前执行上下文中的对象。this 的值在运行时动态确定，它的取值取决于函数的调用方式。
 
 
+例如:
+```js
+obj.fn() // obj 便是调用了函数fn，既函数中的 this === obj
 
+fn() // 这里可以看成 window.fn()，因此 this === window
+```
+
+1. 函数调用方式决定 this 的值：
+  - 作为函数调用（独立函数调用）
+  - 作为方法调用
+  - 作为构造函数调用
+  ```js
+    function MyClass() {
+      console.log(this);
+    }
+    // this 指向新创建的对象（myInstance）
+    const myInstance = new MyClass(); 
+  ```
+  - 使用 call、apply 或 bind 改变 this
+  ```js
+  function myFunction() {
+    console.log(this);
+  }
+  const obj = {};
+  myFunction.call(obj); // this 被显式指定为 obj
+
+  ```
+  - 箭头函数中的 this
+
+  ```js
+  const myArrowFunction = () => {
+    console.log(this);
+  };
+  myArrowFunction(); // 箭头函数没有自己的 this，继承外部的执行上下文
+  ```
+2. 运行时动态确定：
+
+this 的值是在函数被调用的时候动态确定的，而不是在函数定义时确定的。这种动态性使得函数可以在不同的上下文中被调用，从而适应不同的使用场景。
+
+3. 全局对象和严格模式：
+
+在非严格模式下，当函数作为独立函数调用时，this 会指向全局对象（浏览器环境下通常是 window）。在严格模式下，独立函数调用时 this 会是 undefined。
+
+4. this 的绑定规则：
+
+
+在 JavaScript 中，this 的绑定规则可以总结为以下四种情况：
+
+- 默认绑定： 独立函数调用时，this 指向全局对象（非严格模式）或 undefined（严格模式）。
+- 隐式绑定： 方法调用时，this 指向调用该方法的对象。
+- 显式绑定： 使用 call、apply 或 bind 等方法显式指定 this。
+```js
+fn.call(target, 1, 2)
+fn.apply(target, [1, 2])
+fn.bind(target)(1,2)
+```
+- 箭头函数绑定： 箭头函数没有自己的 this，继承外部的执行上下文。
+
+5. 动态绑定：
+
+this 的值在运行时动态绑定，这使得函数可以适应不同的调用方式，提高了灵活性。
 
