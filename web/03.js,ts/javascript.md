@@ -523,7 +523,7 @@ console.log(name) //name is not defined
 - 使用setTimeout包裹，通过第三个参数传入
 - 使用 `块级作用域`，让变量成为自己上下文的属性，避免共享
 
-## ES6 Generator 函数
+## Generator 函数
 
 > ES6 中的 Generator 函数是一种特殊类型的函数，它允许你在函数执行过程中暂停并恢复。Generator 函数通过使用 function* 语法进行声明，并且在函数体内使用 yield 关键字来控制执行流。这使得你可以按需生成一系列的值，而不必一次性生成所有值，从而更灵活地控制异步流程或迭代过程。
 
