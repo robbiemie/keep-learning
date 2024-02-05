@@ -241,12 +241,25 @@ console.log(Object.prototype.__proto__ === null) // true
 
 > ES6规定，let/const 命令会使区块形成封闭的作用域。若在声明之前使用变量，就会报错。总之，在代码块内，使用 let 命令声明变量之前，该变量都是不可用的。这在语法上，称为 “暂时性死区”（ temporal dead zone，简称 TDZ）。
 
-```js
-console.log(x); // ReferenceError: Cannot access 'x' before initialization
-let x = 5;
-```
 
-这个行为的目的是为了捕获在代码中可能存在的错误，防止在变量初始化之前就使用变量。这与使用 var 声明的变量的行为不同，var 声明的变量在整个作用域内都是可见的，只是在初始化之前访问会得到 undefined。
+ES6 明确规定，代码块（{}）中如果出现** let** 和 **const** 声明的变量，这些变量的作用域会被限制在代码块内，也就是块级作用域。
+
+示例2
+```js
+var a = 1;
+if(true){
+	a = 2;
+    console.log(a); // ?
+	let a;
+}
+```
+其实，上述例子在执行代码2的时候，已经报错： Cannot access 'a' before initialization。意思是无法再初始化 a 前，访问该变量。
+
+暂时性死区的设计，也是为了提倡大家先声明，后使用，养成良好的编程习惯。
+
+这个行为的目的是为了捕获在代码中可能存在的错误，防止在变量初始化之前就使用变量。
+
+这与使用 var 声明的变量的行为不同，var 声明的变量在整个作用域内都是可见的，只是在初始化之前访问会得到 undefined。
 
 ```js
 console.log(y); // undefined
@@ -410,3 +423,102 @@ function outerFunction() {
 outerFunction();
 ```
 在上述例子中，innerFunction 的作用域链包括自己的变量对象、outerFunction 的变量对象和全局作用域。当访问变量时，引擎首先查找内部函数的变量对象，然后是外部函数的变量对象，最后是全局作用域。
+
+## 闭包
+
+> 闭包是指函数和其相关的引用环境的组合。它的定义可以理解为: 父函数被销毁 的情况下，返回出的子函数的[[scope]]中仍然保留着父级的单变量对象和作用域链。因此可以继续访问到父级的变量对象，这样的函数称为闭包。
+
+
+具体来说，闭包使得函数可以访问其定义时的词法作用域（作用域链）中的变量，即使在函数在其他地方被调用时，它仍然可以访问这些变量。
+
+理解闭包需要掌握以下几个关键点：
+
+1. 函数嵌套： 在 JavaScript 中，函数可以嵌套定义，即在一个函数内部可以包含另一个函数。
+
+```js
+function outer() {
+  var outerVar = "I am outer!";
+
+  function inner() {
+    var innerVar = "I am inner!";
+    console.log(outerVar); // 可以访问外部函数的变量
+  }
+
+  inner();
+}
+
+outer();
+```
+
+2. 作用域链： JavaScript 使用词法作用域规则，即作用域是在代码编写阶段确定的。参考上面代码的例子，函数在定义时会保存对自己所在的作用域的引用，形成了作用域链。
+
+3. 变量的生命周期： 闭包使得函数可以访问定义时的作用域中的变量，即使这个函数在定义时的作用域外被调用。
+
+```js
+function outer() {
+  var outerVar = "I am outer!";
+
+  function inner() {
+    console.log(outerVar);
+  }
+
+  return inner;
+}
+
+var closureFn = outer();
+closureFn(); // 可以访问 outerVar，即使 outer 函数已经执行完毕
+
+```
+5. 返回函数： 通过将函数作为值返回，可以创建闭包。在上面的例子中，outer 函数返回了 inner 函数，形成了闭包。
+
+6. 私有变量： 闭包可以用于创建私有变量，因为外部作用域无法直接访问闭包内部的变量。
+
+```js
+function counter() {
+  var count = 0;
+
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+
+var increment = counter();
+increment(); // 输出 1
+increment(); // 输出 2
+```
+
+
+闭包可能造成**内存泄漏**
+
+```js
+// 闭包最大的作用就是隐藏变量，闭包的一大特性就是内部函数总是可以访问其所在的外部函数中声明的参数和变量
+// 即使在其外部函数被返回（寿命终结）了之后
+// 全局执行上下文
+function Person(){
+  var name = 'cxk';
+  this.getName = function(){
+      return name;
+  }
+  this.setName = function(value){
+      name = value;
+  }
+}
+
+const cxk = new Person()
+
+console.log(cxk.getName()) //cxk
+cxk.setName('jntm')
+console.log(cxk.getName()) //jntm
+console.log(name) //name is not defined
+```
+
+闭包会产生一个很经典的问题:
+
+>多个子函数的[[scope]]都是同时指向父级，是完全共享的。因此当父级的变量对象被修改时，所有子函数都受到影响。
+
+解决方案:
+
+- 变量可以通过 `函数参数的形式` 传入，避免使用默认的[[scope]]向上查找
+- 使用setTimeout包裹，通过第三个参数传入
+- 使用 `块级作用域`，让变量成为自己上下文的属性，避免共享
