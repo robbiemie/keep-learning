@@ -719,3 +719,96 @@ fn.bind(target)(1,2)
 
 this 的值在运行时动态绑定，这使得函数可以适应不同的调用方式，提高了灵活性。
 
+## 类型判断
+
+> 判断 Target 的类型，单单用 typeof 并无法完全满足，这其实并不是 bug，本质原因是 JS 的万物皆对象的理论。因此要真正完美判断时，我们需要区分对待:
+
+1. typeof 操作符：
+
+使用 typeof 操作符可以判断一个值的基本类型。
+
+```js
+typeof 42;        // "number"
+typeof "hello";   // "string"
+typeof true;      // "boolean"
+typeof undefined; // "undefined"
+typeof null;      // "object" (这是 typeof 的一个历史遗留问题)
+typeof {};        // "object"
+typeof [];        // "object"
+typeof function(){}; // "function"
+```
+
+`typeof` 返回一个表示类型的字符串。
+
+需要注意的是，`typeof null` 返回 "object"，这是一个历史遗留问题，实际上 null 是一个特殊的对象值。
+
+2. instanceof 操作符：
+
+`instanceof` 操作符用于判断一个对象是否是某个构造函数的实例。
+
+```js
+const arr = [];
+arr instanceof Array;        // true
+arr instanceof Object;       // true (因为数组也是对象)
+arr instanceof Function;     // false
+```
+
+3. Object.prototype.toString() 方法：
+
+使用 Object.prototype.toString() 方法可以更精准地获取对象的内部类型。
+
+```js
+Object.prototype.toString.call(42);       // "[object Number]"
+Object.prototype.toString.call("hello");  // "[object String]"
+Object.prototype.toString.call(true);      // "[object Boolean]"
+Object.prototype.toString.call(undefined); // "[object Undefined]"
+Object.prototype.toString.call(null);      // "[object Null]"
+Object.prototype.toString.call({});        // "[object Object]"
+Object.prototype.toString.call([]);        // "[object Array]"
+Object.prototype.toString.call(function(){}); // "[object Function]"
+```
+
+4. Array.isArray() 方法：
+
+Array.isArray() 方法用于判断一个值是否是数组。
+
+```js
+Array.isArray([]);          // true
+Array.isArray({});          // false
+Array.isArray("hello");     // false
+Array.isArray(42);          // false
+```
+
+5. isNaN() 函数：
+
+```js
+isNaN(NaN);       // true
+isNaN(42);        // false
+isNaN("hello");   // true
+isNaN(undefined); // true
+```
+
+6. 强制类型转换：
+
+```js
+const value = "hello";
+if (typeof value === "string") {
+  console.log("It's a string!");
+}
+```
+
+
+很稳的判断封装:
+
+```js
+let class2type = {}
+'Array Date RegExp Object Error'.split(' ')
+.forEach(e => class2type[ '[object ' + e + ']' ] = e.toLowerCase()) 
+
+function type(obj) {
+    if (obj == null) return String(obj)
+    return typeof obj === 'object' ? 
+        class2type[ Object.prototype.toString.call(obj) ] || 'object' 
+        : typeof obj
+}
+```
