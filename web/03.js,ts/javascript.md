@@ -242,6 +242,9 @@ console.log(Object.prototype.__proto__ === null) // true
 > ES6规定，let/const 命令会使区块形成封闭的作用域。若在声明之前使用变量，就会报错。总之，在代码块内，使用 let 命令声明变量之前，该变量都是不可用的。这在语法上，称为 “暂时性死区”（ temporal dead zone，简称 TDZ）。
 
 
+当程序的控制流程在新的作用域（module function 或 block 作用域）进行实例化时，在此作用域中用let/const声明的变量会先在作用域中被创建出来，但因此时还未进行词法绑定，所以是不能被访问的，如果访问就会抛出错误。因此，在这运行流程进入作用域创建变量，到变量可以被访问之间的这一段时间，就称之为暂时死区。
+
+
 ES6 明确规定，代码块（{}）中如果出现** let** 和 **const** 声明的变量，这些变量的作用域会被限制在代码块内，也就是块级作用域。
 
 示例2
@@ -256,6 +259,8 @@ if(true){
 其实，上述例子在执行代码2的时候，已经报错： Cannot access 'a' before initialization。意思是无法再初始化 a 前，访问该变量。
 
 暂时性死区的设计，也是为了提倡大家先声明，后使用，养成良好的编程习惯。
+
+
 
 这个行为的目的是为了捕获在代码中可能存在的错误，防止在变量初始化之前就使用变量。
 
@@ -811,4 +816,145 @@ function type(obj) {
         class2type[ Object.prototype.toString.call(obj) ] || 'object' 
         : typeof obj
 }
+```
+
+## 隐式类型转换
+
+> 隐式类型转换（Implicit Type Conversion）是指在运行时自动进行的类型转换，而无需明确指定。这种类型转换通常发生在不同类型的操作中，比如算术运算、比较操作、逻辑运算等。
+
+
+- `-、*、/、%` ：一律转换成数值后计算
+- `+`：数字 + 字符串 = 字符串， 运算顺序是从左到右
+- 数字 + 对象， 优先调用对象的valueOf -> toString
+- 数字 + boolean/null -> 数字
+- 数字 + undefined -> NaN
+- [1].toString() === '1'
+- {}.toString() === '[object object]'
+- NaN === NaN // false
+- +undefined 为 NaN
+
+1. 字符串和数字的隐式转换：
+```js
+let str = "5";
+let num = 10;
+
+let result = str + num; // 字符串拼接，result 的值为 "510"，str 隐式转换为字符串
+console.log(result);
+
+let subtraction = num - str; // 数字运算，str 隐式转换为数字，subtraction 的值为 5
+console.log(subtraction);
+```
+
+2. 字符串和布尔的隐式转换：
+
+```js
+let bool = true;
+
+let strConcat = "Value is: " + bool; // 字符串拼接，bool 隐式转换为字符串
+console.log(strConcat); // "Value is: true"
+
+// 注意是双等号！比较，true 隐式转换为数字（1），
+let boolComparison = "5" == true; // 比较结果为 true
+console.log(boolComparison);
+
+```
+
+3. 数字和布尔的隐式转换：
+
+```js
+let num = 42;
+let bool = true;
+
+let numAddition = num + bool; // 数字运算，bool 隐式转换为数字，numAddition 的值为 43
+console.log(numAddition);
+```
+
+4. 数字和字符串的隐式转换：
+
+```js
+let str = "10";
+let num = 5;
+
+let strConcat = str + num; // 字符串拼接，num 隐式转换为字符串，strConcat 的值为 "105"
+console.log(strConcat);
+
+let strSubtraction = str - num; // 数字运算，str 隐式转换为数字，strSubtraction 的值为 5
+console.log(strSubtraction);
+```
+
+5. 对象和原始值的隐式转换：
+
+```js
+let obj = { toString: () => "42" };
+
+let str = "The value is: " + obj; // 对象隐式调用 toString() 方法，obj 转换为字符串
+console.log(str); // "The value is: 42"
+
+let num = 10 + obj; // 对象隐式调用 valueOf() 方法，obj 转换为数字
+console.log(num); // 52
+```
+
+![Alt text](./images/06.png)
+
+## new 运算符
+
+> new 运算符用于创建用户定义的对象类型的实例或者说创建一个自定义对象，并执行构造函数来初始化该对象。
+
+MDN reference: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new
+
+new 的语法如下：
+
+```js
+let objectName = new Constructor([arguments]);
+```
+
+- `objectName`：新创建的对象的名称。
+- `Constructor`：创建对象的构造函数。
+- `arguments`：传递给构造函数的参数。
+
+当使用 new 运算符时，它的主要步骤如下：
+
+1. 创建一个新的空对象： 一个新的空对象会被创建，作为将要实例化的对象。
+2. 将构造函数的作用域赋给新对象（this 指向新对象）： 新对象会作为 this 关键字的上下文（执行上下文）传递给构造函数，使构造函数能够操作新对象。
+3. 执行构造函数的代码（初始化新对象）： 构造函数中的代码会被执行，可以在这里对新对象进行属性的初始化等操作。
+4. 返回新对象： 如果构造函数中没有显式返回一个对象，则 new 运算符会隐式返回新创建的对象。如果构造函数中返回了一个对象，则返回该对象而不是新创建的对象。
+
+```js
+function Person(name, age) {
+  // 2.在构造函数中初始化对象的属性
+  this.name = name;
+  this.age = age;
+  // 注意：如果构造函数中有返回值，并且返回值是一个对象，则返回该对象；否则返回新创建的对象。
+}
+
+// 1.使用 new 运算符创建一个 Person 对象
+const person1 = new Person("Alice", 25);
+
+console.log(person1.name); // "Alice"
+console.log(person1.age);  // 25
+```
+
+伪代码实现
+
+```js
+function newFunc(cons) {
+    // 1. 创建一个空对象，该对象指向
+    // 构造函数的原型对象
+    const obj = Object.create(cons.prototype)
+    // 2. 调用构造函数,并修改 this 指向
+    let result = cons.call(obj)
+    if(typeof result === 'object') {
+        // 如果构造函数返回对象，则返回改对象
+        return result
+    } else {
+        // 反之，返回新创建的对象
+        return obj
+    }
+}
+// 构造函数
+function Fun() {
+}
+// 调用
+newFunc(Fun)
+
 ```
