@@ -1,5 +1,23 @@
 # Typescript
 
+## 运行原理
+
+1. 编译阶段
+> 在编译阶段，TypeScript 文件（.ts 文件）被编译器（tsc）编译成 JavaScript 文件（.js 文件）
+  - 编译器首先会解析 TypeScript 代码，进行词法分析和语法分析
+  - 然后将其转换成与目标 JavaScript 版本兼容的代码。
+
+在这个过程中，编译器会根据 tsconfig.json 文件中的配置选项来进行相应的编译设置，例如目标版本、模块系统、严格检查等。
+
+
+2. 执行阶段
+
+在执行阶段，生成的 JavaScript 代码被执行在目标环境中，无论是浏览器端还是 Node.js 环境。在浏览器端，生成的 JavaScript 代码会被加载并在浏览器中执行。在 Node.js 环境中，生成的 JavaScript 代码会通过 Node.js 运行时环境来执行。在执行阶段，生成的 JavaScript 代码将按照 JavaScript 的执行规则进行解释和执行，与普通的 JavaScript 代码没有区别。
+
+
+
+## tsconfig.json
+
 TypeScript 的配置可以通过 tsconfig.json 文件进行管理，该文件包含了 TypeScript 编译器的配置选项。在项目的根目录下创建一个名为 tsconfig.json 的文件，并配置相应的选项即可。
 
 
