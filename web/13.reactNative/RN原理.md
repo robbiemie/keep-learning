@@ -31,3 +31,54 @@ React Native 是一个由 Facebook 开发的开源框架，允许开发者使用
 1. 平台：React 用于构建网页应用，而 React Native 用于构建原生移动应用。
 2. 组件：React 使用 HTML 和 CSS 构建界面，而 React Native 使用原生组件和样式表（StyleSheet）。
 3. 导航：移动应用常用的导航模式（如栈导航、标签导航）在 React Native 中通过专门的库（如 React Navigation）实现，而不是使用 Web 的路由库。
+
+## 项目架构图
+
+```
++---------------------+          +------------------+
+|                     |          |                  |
+|    JavaScript      +---------->   Native Modules |
+|     Thread         |          |   (iOS/Android)  |
+|                     |          |                  |
++----------+----------+          +---------+--------+
+           |                              |
+           | Bridge                       | Bridge
+           |                              |
++----------v----------+          +---------v--------+
+|                     |          |                  |
+|   React Native      |          |  Native UI       |
+|     Components      +----------> Components       |
+|                     |          |  (iOS/Android)   |
++----------+----------+          +------------------+
+           |
++----------v----------+
+|                     |
+|    Navigation       |
+|                     |
++----------+----------+
+           |
++----------v----------+
+|                     |
+|    State Management |
+|     (Redux/MobX)    |
+|                     |
++----------+----------+
+           |
++----------v----------+
+|                     |
+|     Networking      |
+|     (Fetch/Axios)   |
+|                     |
++---------------------+
+
+
+```
+
+- JavaScript Thread：运行 JavaScript 代码的线程，包括应用的业务逻辑、状态管理和 React 组件。
+- React Native Components：使用 JavaScript 编写的，用于构建应用 UI 的 React 组件。这些组件最终会被映射到对应平台的原生组件。
+- Native Modules (iOS/Android)：平台特定的原生模块，允许 React Native 访问和使用 iOS 或 Android 平台的原生功能，如摄像头、位置信息等。
+- Native UI Components (iOS/Android)：平台特定的原生 UI 组件，React Native 通过桥接机制调用这些原生组件来渲染界面。
+- Bridge：React Native 的桥接机制，负责在 JavaScript 线程和原生线程之间传递信息。
+- Navigation：用于在应用中导航不同页面的库，如 React Navigation，管理应用的路由和页面跳转。
+- State Management：状态管理库（如 Redux 或 MobX），用于管理应用的状态，提供跨组件的状态共享和管理。
+- Networking：处理网络请求的库（如 Fetch 或 Axios），用于从前端应用向后端 API 请求或发送数据。
