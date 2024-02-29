@@ -121,9 +121,40 @@ enum E {
 ```
 
 ```js
-(function(E){
-    E[E['A'] = 0] = 'A'
-})({})
+const Direction = {
+  'UP': 0,
+  'DOWN': 1,
+  'LEFT': 2,
+  'RIGHT': 3,
+};
+
+// 创建反向映射
+const DirectionReverse = {};
+Object.keys(Direction).forEach(key => {
+  DirectionReverse[Direction[key]] = key;
+});
+
+Object.keys(Direction).forEach(key => {
+  const value = Direction[key]
+  Object.defineProperty(Direction, key, {
+    get() {
+      return value
+    }
+  })
+})
+
+Object.keys(DirectionReverse).forEach(key => {
+  const value = DirectionReverse[key]
+  Object.defineProperty(Direction, key, {
+    get() {
+      return value
+    }
+  })
+})
+
+// 使用枚举和反向映射
+console.log(Direction[0]); // 输出 'UP'
+console.log(Direction['UP']); // 输出 '0'
 ```
 
 6. package.json 中 ~、^ 是什么含义
