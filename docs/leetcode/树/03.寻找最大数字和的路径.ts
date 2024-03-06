@@ -68,3 +68,57 @@ function findPath(tree: TreeNode): SingleNode | null {
 
   return head;
 }
+
+/**
+ * 第二种解法（构造map）
+ */
+// function findPath(tree) {
+//     if(!tree) return null;
+//     let queue = [tree];
+//     // 构造map
+//     const map = new Map();
+//     let maxValue = tree.value
+//     let maxNode = tree
+//     map.set(tree, { parent: null, value: tree.value })
+//     // bfs
+//     while(queue.length) {
+//       const node = queue.shift();
+//       const children = node.children || [];
+//       const parentValue = map.get(node).value
+//       // 叶子节点
+//       if(children.length === 0) {
+//         if(parentValue > maxValue) {
+//           // 记录最大叶子
+//           maxValue = parentValue
+//           maxNode = node
+//         }
+//       }
+//       for(let item of children) {
+//         map.set(item, { parent: node, value: item.value + parentValue })
+//         queue.push(item);
+//       }
+//     }
+//     let point = maxNode;
+//     let path = []
+//     let head = null
+//     while(point) {
+//       // 反向查找map
+//       path.push(point.value)
+//       const current = map.get(point);
+//       point.next = current.parent
+//       point = point.next
+//     }
+//     for(let value of path) {
+//       // 构造链表
+//       head = new SingleNode(value, head)
+//     }
+//     return head
+//   }
+  
+//   const child1 = new TreeNode(4)
+//   const child2 = new TreeNode(2)
+//   const child3 = new TreeNode(3)
+  
+//   const root = new TreeNode(1, [child1,child2,child3])
+  
+//   findPath(root)
