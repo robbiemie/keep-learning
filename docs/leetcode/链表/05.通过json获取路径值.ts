@@ -10,14 +10,14 @@ const json = {
   }
 }
 // 按照如下路径索引
-const arr = ['a', 'b', 'c']
+const arr:string[] = ['a', 'b', 'c']
 
-function findPath(json, arr) {
-  let obj = json
+function findPath(json:object, arr:string[]):number {
+  let obj: object | number = json
   for(let key of arr) {
     obj = obj[key]
   }
-  return obj;
+  return typeof obj === 'number' ? obj : 0;
 }
 
 
