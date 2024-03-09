@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
 
+let i = 0;
+const Test = () => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let timer = null
+    setInterval(() => {
+      setCount(count => count+1);
+    }, 1000);
+    return () => { timer = true }
+  }, []);
+
+  console.log(`${++i} - ${count}`);
+  return <span>{`${i} - ${count}`}</span>;
+};
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Test/>
   );
 }
 
