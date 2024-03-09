@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/robbiemie/leetcode-javascript#readme",
   "devDependencies": {
-    "ndb": "^1.1.5",
-    "webpack-cli": "^5.1.4"
+    "ndb": "^1.1.5"
   }
 }
