@@ -7,7 +7,7 @@ function readDirSync(dir, prefix = '') {
 
   files.forEach((file, index) => {
     // 判断是不是最后一个文件或目录，以便适当地显示分支或角落
-    if(file.match('png')) return
+    if(file.match(/png|js|ts/)) return
     const isLast = index === files.length - 1;
     const localDir = path.join(dir, file);
     const stats = fs.statSync(localDir);
