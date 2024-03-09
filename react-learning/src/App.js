@@ -14,6 +14,11 @@ const Test = () => {
   console.log(`${++i} - ${count}`);
   return <span>{`${i} - ${count}`}</span>;
 };
+
+const Button = () => {}
+
+const Message = () => {}
+
 function App() {
   return (
     <Test/>
