@@ -45,3 +45,26 @@ function lengthOfLongestSubstring2(s: string): number {
   
   return maxLen;
 };
+// 方法三
+// 使用队列实现
+function lengthOfLongestSubstring3(s: string): number {
+  if(s.length === 0) return 0;
+
+  let maxLen = 0, left = 0, right = 0;
+  let queue:string[] = []
+  
+  while(left < s.length)  {
+    if(s[right] && queue.indexOf(s[right]) === -1) {
+      queue.push(s[right]);
+      maxLen = Math.max(maxLen, queue.length)
+      right += 1;
+    } else {
+      queue.shift();
+      left += 1;
+    }
+  }
+  
+  return maxLen;
+};
+// pwwkew
+//00,01,
