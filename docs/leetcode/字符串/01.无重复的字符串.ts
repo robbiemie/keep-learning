@@ -19,3 +19,29 @@ function lengthOfLongestSubstring(s: string): number {
 
   return maxLength
 };
+
+// 方法二
+// 滑动窗口
+function lengthOfLongestSubstring2(s: string): number {
+  if(s.length === 0) return 0;
+
+  let maxLen = 0, left = 0, right = 0;
+
+  let set = new Set();
+
+  while(right < s.length) {
+    if(!set.has(s[right])) {
+      // 不在该子串中
+      set.add(s[right]);
+      maxLen = Math.max(right - left + 1, maxLen);
+      right += 1; // 向右偏移
+    } else {
+      // 已存在该子串
+      set.delete(s[left]);
+      // left 向右偏移
+      left += 1;
+    }
+  }
+  
+  return maxLen;
+};
