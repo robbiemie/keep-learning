@@ -1,31 +1,36 @@
-function multiplyLargeNumbers(str1, str2) {
-    function reverse(str = '') {
-        return str.split('').reverse().map(item => +item);
+const treeList = [
+    { id: 1, parentId: 2 },
+    { id: 2, parentId: 0 },
+    { id: 3, parentId: 4 },
+    { id: 4, parentId: 0 },
+    { id: 5, parentId: 4 },
+    { id: 6, parentId: 2 },
+    { id: 7, parentId: 2 },
+    { id: 8, parentId: 3 }
+];
+class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.children = [];
     }
-    let result = '';
-    let arr = new Array(str1.length + str2.length).fill(0);
-    let maxStr = str1;
-    let minStr = str2;
-    // if(str1.length < str2.length) {
-    //     maxStr = str2;
-    //     minStr = str1;
-    // }
-    let numbers1 = reverse(maxStr);
-    let numbers2 = reverse(minStr);
-    for (let i = 0; i < numbers1.length; i++) {
-        let index = i;
-        for (let j = 0; j < numbers2.length; j++) {
-            const multi = numbers1[i] * numbers2[j];
-            const sum = arr[index] + multi;
-            arr[index] = sum % 10;
-            arr[index + 1] += Math.floor(sum / 10);
-            index += 1;
+}
+function restoreTree(treeList) {
+    const map = new Map();
+    let head = [];
+    for (let item of treeList) {
+        const node = new TreeNode(item.id);
+        map[item.id] = node;
+    }
+    for (let item of treeList) {
+        if (item.parentId === 0) {
+            head.push(map[item.id]);
+        }
+        else {
+            const parentNode = map[item.parentId];
+            parentNode.children.push(map[item.id]);
         }
     }
-    // console.log(arr.reverse()) // 121932631137021795226185032733622923332237463801111263526900
-    return arr.reverse().join('');
+    return head;
 }
-// 测试示例
-const str1 = "123456789012345678901234567890";
-const str2 = "987654321098765432109876543210";
-console.log(multiplyLargeNumbers(str1, str2));
+const tree = restoreTree(treeList);
+console.log(JSON.stringify(tree));
