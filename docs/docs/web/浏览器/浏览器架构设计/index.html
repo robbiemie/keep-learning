@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-web/浏览器/浏览器架构设计" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">浏览器架构设计 | 知识储备库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://yangoogle.com/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://yangoogle.com/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://yangoogle.com/docs/docs/web/浏览器/浏览器架构设计"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="浏览器架构设计 | 知识储备库"><meta data-rh="true" name="description" content="这种多进程和多线程的设计有助于提高浏览器的性能、安全性和稳定性。不同的任务被分配到不同的进程和线程中，避免了一个标签页的问题影响整个浏览器，同时充分利用多核处理器的优势"><meta data-rh="true" property="og:description" content="这种多进程和多线程的设计有助于提高浏览器的性能、安全性和稳定性。不同的任务被分配到不同的进程和线程中，避免了一个标签页的问题影响整个浏览器，同时充分利用多核处理器的优势"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://yangoogle.com/docs/docs/web/浏览器/浏览器架构设计"><link data-rh="true" rel="alternate" href="https://yangoogle.com/docs/docs/web/浏览器/浏览器架构设计" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://yangoogle.com/docs/docs/web/浏览器/浏览器架构设计" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Web 基础知识点","item":"https://yangoogle.com/docs/docs/category/web-基础知识点"},{"@type":"ListItem","position":2,"name":"浏览器架构设计","item":"https://yangoogle.com/docs/docs/web/浏览器/浏览器架构设计"}]}</script><link rel="alternate" type="application/rss+xml" href="/docs/blog/rss.xml" title="知识储备库 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/docs/blog/atom.xml" title="知识储备库 Atom Feed"><link rel="stylesheet" href="/docs/assets/css/styles.61e3011e.css">
+<script src="/docs/assets/js/runtime~main.d684f69a.js" defer="defer"></script>
+<script src="/docs/assets/js/main.21183c90.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs/img/logo.svg"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs/"><div class="navbar__logo"><img src="/docs/img/logo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs/img/logo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Robbie Yang</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/docs/category/web-基础知识点">Tutorial</a><a class="navbar__item navbar__link" href="/docs/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/robbiemie" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/docs/category/web-基础知识点">Web 基础知识点</a><button aria-label="折叠侧边栏分类 &#x27;Web 基础知识点&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/html/HTML基础">html</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/css/CSS 基础">css</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/js,ts/javascript">js,ts</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/编码/LRU缓存算法">编码</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/网络/DNS">网络</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/docs/web/浏览器/浏览器架构设计">浏览器</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/docs/web/浏览器/浏览器架构设计">浏览器架构设计</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/浏览器/url输入到浏览器的完整过程">从 url 输入到浏览器的完整过程</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/浏览器/js引擎">JS 引擎</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/浏览器/事件循环">事件循环</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/浏览器/浏览器渲染机制">浏览器渲染机制</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/浏览器/光栅化与合成帧">光栅化</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/cicd/Docker">cicd</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/构建工具/webpack/webpack模块化">构建工具</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/git/Git 基础">git</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/正则表达式/正则表达式">正则表达式</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/vue/MVVM">vue</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/react/react概述">react</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/reactNative/RN原理">reactNative</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/ssr/nuxt">ssr</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/typescript/ts/类型体操">typescript</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/web性能优化/webpack分析优化">web性能优化</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/计算机科学/计算机组成原理">计算机科学</a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/docs/category/算法基础">算法基础</a><button aria-label="展开侧边栏分类 &#x27;算法基础&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/docs/category/摄影知识">摄影知识</a><button aria-label="展开侧边栏分类 &#x27;摄影知识&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/docs/category/web-基础知识点"><span>Web 基础知识点</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">浏览器</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">浏览器架构设计</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>浏览器架构设计</h1></header>
+<blockquote>
+<p>这种多进程和多线程的设计有助于提高浏览器的性能、安全性和稳定性。不同的任务被分配到不同的进程和线程中，避免了一个标签页的问题影响整个浏览器，同时充分利用多核处理器的优势</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" alt="Alt text" src="/docs/assets/images/image-1-c20a588cc86192d9a298403f681eb99c.png" width="1437" height="529" class="img_ev3q"></p>
+<ol>
+<li>浏览器进程（Browser Process）：</li>
+</ol>
+<ul>
+<li>作用：<!-- -->
+<ul>
+<li>负责整个浏览器的管理，包括用户界面、地址栏、书签栏等。</li>
+<li>管理多个标签页的创建、关闭、切换，以及处理用户输入。</li>
+</ul>
+</li>
+<li>线程：<!-- -->
+<ul>
+<li>主线程：处理用户界面、布局、绘制、解析 DOM 和执行 JavaScript。</li>
+<li>网络线程：处理网络请求、下载资源。</li>
+<li>GPU 进程：处理与 GPU 相关的任务，如页面的 3D 渲染、硬件加速等。</li>
+<li>其他辅助线程：用于处理其他任务，如插件管理、浏览器同步等。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>渲染进程（Renderer Process）：</li>
+</ol>
+<ul>
+<li>作用：<!-- -->
+<ul>
+<li>每个标签页对应一个独立的渲染进程，负责渲染页面内容、解析 HTML、CSS，执行 JavaScript。</li>
+<li>线程：<!-- -->
+<ul>
+<li>主线程：处理用户界面、布局、绘制、解析 DOM 和执行 JavaScript（与浏览器进程的主线程类似）。</li>
+<li>网络线程：处理网络请求、下载资源。</li>
+<li>渲染线程：将渲染树转换为图层，进行页面的绘制和合成。</li>
+<li>JavaScript 引擎线程：负责执行 JavaScript 代码，处理异步操作、事件循环等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>GPU 进程（GPU Process）：</li>
+</ol>
+<ul>
+<li>作用：<!-- -->
+<ul>
+<li>处理与 GPU 相关的任务，如页面的 3D 渲染、硬件加速等。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>插件进程（Plugin Process）：</li>
+</ol>
+<ul>
+<li>作用：<!-- -->
+<ul>
+<li>负责运行插件，如 Flash 插件、PDF 阅读器等。</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>其他辅助进程（Utility Process）：</li>
+</ol>
+<ul>
+<li>作用：<!-- -->
+<ul>
+<li>处理一些浏览器的辅助功能，如密码管理、浏览器同步等。</li>
+</ul>
+</li>
+</ul>
+<ol start="6">
+<li>其他可能的线程：</li>
+</ol>
+<ul>
+<li>定时器线程、事件循环线程等：</li>
+<li>用于处理定时器、异步事件等。</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Alt text" src="/docs/assets/images/image-2-1fde586148a02c11a21b6a04aa4d65d2.png" width="694" height="829" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="多进程设计">多进程设计<a href="#多进程设计" class="hash-link" aria-label="多进程设计的直接链接" title="多进程设计的直接链接">​</a></h2>
+<ol>
+<li>浏览器进程（Browser Process）:</li>
+</ol>
+<ul>
+<li>负责整个浏览器的管理，包括用户界面、地址栏、书签栏等。</li>
+<li>管理多个标签页的创建、关闭、切换，以及处理用户输入。</li>
+</ul>
+<ol start="2">
+<li>渲染进程（Renderer Process）:</li>
+</ol>
+<ul>
+<li>每个标签页对应一个独立的渲染进程。</li>
+<li>负责解析 HTML、CSS，构建 DOM 树和 CSSOM 树，生成渲染树，最终绘制在屏幕上。</li>
+</ul>
+<ol start="3">
+<li>插件进程（Plugin Process）:</li>
+</ol>
+<ul>
+<li>负责运行插件，如 Flash 插件、PDF 阅读器等。</li>
+<li>独立的插件进程提高了插件的隔离性，防止插件崩溃影响整个浏览器。</li>
+</ul>
+<ol start="4">
+<li>GPU 进程（GPU Process）:</li>
+</ol>
+<ul>
+<li>处理与 GPU 相关的任务，如页面的 3D 渲染、硬件加速等。</li>
+<li>提高图形处理的性能。</li>
+</ul>
+<ol start="5">
+<li>网络进程（Network Process）:</li>
+</ol>
+<ul>
+<li>处理网络请求、下载资源。</li>
+<li>使网络操作异步，不阻塞主线程。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="多线程设计">多线程设计：<a href="#多线程设计" class="hash-link" aria-label="多线程设计：的直接链接" title="多线程设计：的直接链接">​</a></h2>
+<ol>
+<li>主线程（Main Thread）：</li>
+</ol>
+<ul>
+<li>负责处理用户界面、布局、绘制、解析 DOM 和执行 JavaScript。</li>
+<li>处理用户输入、页面事件等。</li>
+</ul>
+<ol start="2">
+<li>网络线程（Network Thread）：</li>
+</ol>
+<ul>
+<li>处理网络请求、下载资源。</li>
+<li>使网络操作异步，不阻塞主线程。</li>
+</ul>
+<ol start="3">
+<li>渲染线程（Renderer Thread）：</li>
+</ol>
+<ul>
+<li>负责将渲染树转换为图层，进行页面的绘制和合成。</li>
+<li>独立的线程提高了页面的流畅性，不受其他任务的影响。</li>
+</ul>
+<ol start="4">
+<li>JavaScript 引擎线程（JavaScript Engine Thread）：</li>
+</ol>
+<ul>
+<li>负责执行 JavaScript 代码，处理异步操作、事件循环等。</li>
+<li>使 JavaScript 执行在单独的线程中，不阻塞其他任务。</li>
+</ul>
+<ol start="5">
+<li>定时器线程（Timer Thread）：</li>
+</ol>
+<ul>
+<li>处理定时器相关的任务，执行定时器中的回调函数。</li>
+</ul>
+<ol start="6">
+<li>事件循环线程（Event Loop Thread）：</li>
+</ol>
+<ul>
+<li>处理事件循环，监听事件队列，处理用户输入、定时器、网络请求等异步事件。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="多进程和多线程的协同工作">多进程和多线程的协同工作：<a href="#多进程和多线程的协同工作" class="hash-link" aria-label="多进程和多线程的协同工作：的直接链接" title="多进程和多线程的协同工作：的直接链接">​</a></h2>
+<ol>
+<li>进程间通信（IPC）：</li>
+</ol>
+<ul>
+<li>不同进程之间通过 IPC 机制进行通信，确保各个模块之间能够协同工作。</li>
+</ul>
+<ol start="2">
+<li>任务分离：</li>
+</ol>
+<ul>
+<li>将不同的任务分配给不同的进程和线程，提高系统的并行性，加速任务的执行。</li>
+</ul>
+<ol start="3">
+<li>资源共享和隔离：</li>
+</ol>
+<ul>
+<li>进程之间的内存空间是独立的，确保一个进程的问题不会直接影响其他进程。</li>
+<li>线程共享相同的内存空间，使得共享数据和通信更为简便。</li>
+</ul>
+<ol start="4">
+<li>优化性能和响应性：</li>
+</ol>
+<ul>
+<li>通过多线程和多进程的设计，实现对 CPU、GPU、网络等硬件资源的充分利用，提高浏览器的性能和响应性。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="其他补充知识">其他补充知识<a href="#其他补充知识" class="hash-link" aria-label="其他补充知识的直接链接" title="其他补充知识的直接链接">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="多线程和多进程">多线程和多进程<a href="#多线程和多进程" class="hash-link" aria-label="多线程和多进程的直接链接" title="多线程和多进程的直接链接">​</a></h2>
+<blockquote>
+<p>多线程和多进程是两种不同的并发执行的模型，它们在处理任务并行性、内存和通信等方面有一些关键区别。</p>
+</blockquote>
+<ol>
+<li>多进程（Multi-Process）</li>
+</ol>
+<ul>
+<li>独立的内存空间: 不同进程拥有独立的内存空间，一个进程的变化不会直接影响其他进程。</li>
+<li>通信复杂: 进程之间的通信较为复杂，通常需要使用进程间通信（IPC）的机制，如管道、消息队列、共享内存等。</li>
+<li>资源消耗大: 每个进程都需要独立的内存空间和系统资源，因此资源消耗相对较大。</li>
+<li>稳定性高: 由于独立的内存空间，一个进程崩溃通常不会影响其他进程。</li>
+<li>适用于并行计算: 多进程适用于需要大量计算的任务，可以充分利用多核处理器的优势。</li>
+</ul>
+<ol start="2">
+<li>多线程（Multi-Threading）</li>
+</ol>
+<ul>
+<li>共享内存空间: 线程共享相同的内存空间，一个线程的变化会直接影响其他线程。</li>
+<li>通信简单: 线程之间的通信相对简单，因为它们可以直接共享内存。</li>
+<li>资源消耗小: 由于线程共享内存，资源消耗相对较小。</li>
+<li>稳定性低: 一个线程崩溃可能导致整个进程崩溃，因为它们共享相同的内存空间。</li>
+<li>适用于并发任务: 多线程适用于并发执行的任务，如 I/O 密集型任务，可以提高程序的响应速度</li>
+</ul>
+<ol start="3">
+<li>共同点:</li>
+</ol>
+<ul>
+<li>并发执行: 多进程和多线程都是为了实现任务的并发执行，提高系统的响应性和性能。</li>
+<li>资源竞争: 由于共享资源，都可能面临资源竞争的问题，需要通过同步机制来解决。</li>
+<li>调度: 操作系统负责对进程或线程进行调度，使它们交替执行。</li>
+<li>并行性: 多进程和多线程都可以在多核处理器上实现并行执行，充分利用硬件资源。</li>
+</ul>
+<ol start="4">
+<li>选择使用多进程还是多线程的考虑因素:</li>
+</ol>
+<ul>
+<li>任务性质: 如果任务需要大量计算，适合使用多进程；如果是 I/O 密集型任务，适合使用多线程。</li>
+<li>资源消耗: 多线程的资源消耗相对较小，适用于资源有限的环境。</li>
+<li>通信需求: 如果任务之间需要频繁通信，使用多线程较为方便；如果通信较为复杂，多进程可能更适合。</li>
+<li>稳定性需求: 如果一个任务的崩溃不能影响其他任务，多进程更为稳定；如果可以接受共享内存空间的稳定性风险，多线程可能更为简便。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ipc-工作原理">IPC 工作原理<a href="#ipc-工作原理" class="hash-link" aria-label="IPC 工作原理的直接链接" title="IPC 工作原理的直接链接">​</a></h2>
+<blockquote>
+<p>进程间通信（Inter-Process Communication，IPC）是不同进程之间进行数据交换和共享信息的机制。在浏览器中，多进程设计使得不同的组件（如浏览器进程、渲染进程等）需要进行通信，以协同工作。</p>
+</blockquote>
+<ol>
+<li>管道（Pipe）：</li>
+</ol>
+<ul>
+<li>管道是一种单向通信机制，可以在两个进程之间传递数据。</li>
+<li>在浏览器中，浏览器进程和渲染进程之间可能使用管道进行通信，以传递一些关键的信息。</li>
+</ul>
+<ol start="2">
+<li>消息队列（Message Queue）：</li>
+</ol>
+<ul>
+<li>消息队列是一种通过消息传递来实现进程间通信的机制。</li>
+<li>进程可以将消息发送到队列，其他进程则可以从队列中接收消息。</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">例如，在浏览器中，浏览器进程和渲染进程之间可能使用消息队列传递渲染任务、用户输入等信息。</span><br></span></code></pre></div></div>
+<ol start="3">
+<li>共享内存（Shared Memory）：</li>
+</ol>
+<ul>
+<li>共享内存是一种高效的进程间通信方式，允许多个进程访问同一块内存区域。</li>
+<li>不同进程可以通过共享内存直接读写数据，而无需复制数据。</li>
+<li>在浏览器中，可能会使用共享内存来共享一些大型的数据结构，提高性能。</li>
+</ul>
+<ol start="4">
+<li>信号（Signal）：</li>
+</ol>
+<ul>
+<li>信号是一种异步通信机制，用于通知进程发生了某个事件。</li>
+<li>进程可以通过发送信号来通知其他进程，接收信号的进程可以执行相应的处理。</li>
+<li>信号通常用于处理一些异常情况，如进程的中断、终止等。</li>
+</ul>
+<ol start="5">
+<li>套接字（Socket）：</li>
+</ol>
+<ul>
+<li>套接字是一种网络通信的机制，也可以用于不同进程之间的通信。</li>
+<li>进程可以通过套接字在网络上发送数据，其他进程通过套接字接收数据。</li>
+<li>在浏览器中，可能使用套接字进行进程间通信，特别是在与远程服务器通信时。</li>
+</ul>
+<ol start="6">
+<li>RPC（Remote Procedure Call）：</li>
+</ol>
+<ul>
+<li>RPC 是一种远程过程调用的机制，允许一个进程调用另一个进程的过程。</li>
+<li>在浏览器中，可能会使用 RPC 实现浏览器进程和渲染进程之间的远程调用，以执行一些特定的任务。</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/docs/web/网络/网络安全漏洞"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">网络安全漏洞</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/docs/web/浏览器/url输入到浏览器的完整过程"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">从 url 输入到浏览器的完整过程</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#多进程设计" class="table-of-contents__link toc-highlight">多进程设计</a></li><li><a href="#多线程设计" class="table-of-contents__link toc-highlight">多线程设计：</a></li><li><a href="#多进程和多线程的协同工作" class="table-of-contents__link toc-highlight">多进程和多线程的协同工作：</a><ul><li><a href="#其他补充知识" class="table-of-contents__link toc-highlight">其他补充知识</a></li></ul></li><li><a href="#多线程和多进程" class="table-of-contents__link toc-highlight">多线程和多进程</a></li><li><a href="#ipc-工作原理" class="table-of-contents__link toc-highlight">IPC 工作原理</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/robbiemie" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://blog.csdn.net/u013243347" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-web/计算机科学/计算机网络" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">计算机网络 | 知识储备库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://yangoogle.com/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://yangoogle.com/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://yangoogle.com/docs/docs/web/计算机科学/计算机网络"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="计算机网络 | 知识储备库"><meta data-rh="true" name="description" content="计算机网络是指通过通信链路和交换设备相互连接起来的一组计算机系统。这些计算机系统可以进行数据交换和资源共享，形成一个广泛的信息传输网络。计算机网络的设计和运行涉及到多个层次和多个概念，从物理层到应用层，都有各种协议和技术来支持网络的正常运行。"><meta data-rh="true" property="og:description" content="计算机网络是指通过通信链路和交换设备相互连接起来的一组计算机系统。这些计算机系统可以进行数据交换和资源共享，形成一个广泛的信息传输网络。计算机网络的设计和运行涉及到多个层次和多个概念，从物理层到应用层，都有各种协议和技术来支持网络的正常运行。"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://yangoogle.com/docs/docs/web/计算机科学/计算机网络"><link data-rh="true" rel="alternate" href="https://yangoogle.com/docs/docs/web/计算机科学/计算机网络" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://yangoogle.com/docs/docs/web/计算机科学/计算机网络" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Web 基础知识点","item":"https://yangoogle.com/docs/docs/category/web-基础知识点"},{"@type":"ListItem","position":2,"name":"计算机网络","item":"https://yangoogle.com/docs/docs/web/计算机科学/计算机网络"}]}</script><link rel="alternate" type="application/rss+xml" href="/docs/blog/rss.xml" title="知识储备库 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/docs/blog/atom.xml" title="知识储备库 Atom Feed"><link rel="stylesheet" href="/docs/assets/css/styles.61e3011e.css">
+<script src="/docs/assets/js/runtime~main.d684f69a.js" defer="defer"></script>
+<script src="/docs/assets/js/main.21183c90.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs/img/logo.svg"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs/"><div class="navbar__logo"><img src="/docs/img/logo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs/img/logo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Robbie Yang</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/docs/category/web-基础知识点">Tutorial</a><a class="navbar__item navbar__link" href="/docs/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/robbiemie" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/docs/category/web-基础知识点">Web 基础知识点</a><button aria-label="折叠侧边栏分类 &#x27;Web 基础知识点&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/html/HTML基础">html</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/css/CSS 基础">css</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/js,ts/javascript">js,ts</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/编码/LRU缓存算法">编码</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/网络/DNS">网络</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/浏览器/浏览器架构设计">浏览器</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/cicd/Docker">cicd</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/构建工具/webpack/webpack模块化">构建工具</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/git/Git 基础">git</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/正则表达式/正则表达式">正则表达式</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/vue/MVVM">vue</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/react/react概述">react</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/reactNative/RN原理">reactNative</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/ssr/nuxt">ssr</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/typescript/ts/类型体操">typescript</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/web性能优化/webpack分析优化">web性能优化</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/docs/web/计算机科学/计算机组成原理">计算机科学</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/计算机组成原理">计算机组成原理</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/操作系统">操作系统</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/编译原理">编译原理</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/docs/web/计算机科学/计算机网络">计算机网络</a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/docs/category/算法基础">算法基础</a><button aria-label="展开侧边栏分类 &#x27;算法基础&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/docs/category/摄影知识">摄影知识</a><button aria-label="展开侧边栏分类 &#x27;摄影知识&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/docs/category/web-基础知识点"><span>Web 基础知识点</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">计算机科学</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">计算机网络</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>计算机网络</h1></header>
+<blockquote>
+<p>计算机网络是指通过通信链路和交换设备相互连接起来的一组计算机系统。这些计算机系统可以进行数据交换和资源共享，形成一个广泛的信息传输网络。计算机网络的设计和运行涉及到多个层次和多个概念，从物理层到应用层，都有各种协议和技术来支持网络的正常运行。</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="核心概念">核心概念<a href="#核心概念" class="hash-link" aria-label="核心概念的直接链接" title="核心概念的直接链接">​</a></h2>
+<ul>
+<li>协议： 计算机网络的通信需要遵循一定的规则和标准，这些规则和标准就是协议。例如，IP（Internet Protocol）是一种网络层协议，定义了数据在网络中的传输方式。</li>
+<li>拓扑结构： 拓扑结构定义了计算机网络中节点和链接的物理或逻辑布局。常见的拓扑结构有星型、总线型、环型、网状型等。</li>
+<li>路由器和交换机： 路由器负责在不同网络之间转发数据，而交换机负责在同一网络内部进行数据的交换。</li>
+<li>互联网： 互联网是全球计算机网络的集合，它连接了世界上的数十亿设备。TCP/IP协议是互联网的基础协议。</li>
+<li>安全性： 计算机网络的安全性是一个重要的关注点。加密、防火墙、认证等技术用于保护数据的传输和存储。</li>
+<li>通信协议和标准： 计算机网络通信是通过一系列协议和标准进行的。TCP/IP协议族是互联网中最常用的协议，包括TCP（传输控制协议）和IP（互联网协议）等。这些协议定义了通信的规则和格式。</li>
+<li>网络拓扑结构： 计算机网络的拓扑结构描述了网络中各个节点之间的物理和逻辑连接方式。常见的拓扑结构包括星型、总线型、环形、网状等。不同的拓扑结构影响着网络的性能和可靠性。</li>
+<li>分层结构： 计算机网络往往采用分层结构，其中每一层负责特定的功能。常见的分层模型包括OSI模型和TCP/IP模型，分别划分了物理层、数据链路层、网络层、传输层、会话层、表示层和应用层。</li>
+<li>数据链路和传输层： 数据链路层负责点对点的直接通信，处理帧的传输和错误检测。传输层提供端到端的通信，确保数据的可靠性和顺序传输。TCP和UDP是两个常见的传输层协议。</li>
+<li>路由和交换： 路由器和交换机是计算机网络中的关键设备。路由器负责在不同网络之间转发数据包，而交换机则在同一网络中进行数据的交换。路由算法和交换算法影响着网络的性能和效率。</li>
+<li>网络安全： 网络安全是计算机网络中的一个重要方面。它包括防火墙、入侵检测系统、加密技术等，以保护网络免受未经授权的访问和攻击。</li>
+<li>互联网和应用层： 互联网是全球范围内的计算机网络，连接了数十亿的设备和用户。应用层涉及网络上的各种应用和服务，如电子邮件、网页浏览、文件传输等。</li>
+<li>网络性能和优化： 计算机科学家需要关注网络的性能问题，包括带宽、延迟、吞吐量等。网络优化技术包括负载均衡、流量控制、拥塞控制等。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="网络分类">网络分类<a href="#网络分类" class="hash-link" aria-label="网络分类的直接链接" title="网络分类的直接链接">​</a></h2>
+<ol>
+<li>按照规模和范围的分类：</li>
+</ol>
+<ul>
+<li>个人局域网（Personal Area Network, PAN）:<!-- -->
+<ul>
+<li>范围：个人使用，通常在一个较小的范围内，比如家庭或个人办公室。</li>
+<li>例子：蓝牙设备连接、无线鼠标等。</li>
+</ul>
+</li>
+<li>局域网（Local Area Network, LAN）:<!-- -->
+<ul>
+<li>范围：通常在一个建筑或校园内，用于连接局部区域的设备。</li>
+<li>例子：学校内部网络、企业内部网络。</li>
+</ul>
+</li>
+<li>城域网（Metropolitan Area Network, MAN）:<!-- -->
+<ul>
+<li>范围：覆盖一个城市或大都市区域，连接多个局域网。</li>
+<li>例子：城市内部的高速网络连接。</li>
+</ul>
+</li>
+<li>广域网（Wide Area Network, WAN）:<!-- -->
+<ul>
+<li>范围：覆盖更大的地理范围，连接不同城市、国家或甚至全球的网络。</li>
+<li>例子：互联网本身就是一个全球性的广域网。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>按照连接方式的分类：</li>
+</ol>
+<ul>
+<li>点对点网络（Point-to-Point Network）:<!-- -->
+<ul>
+<li>两个设备之间直接建立连接，如电话线连接两台计算机。</li>
+<li>适用于较小的网络，通常是点对点的连接。</li>
+</ul>
+</li>
+<li>广播式网络（Broadcast Network）:<!-- -->
+<ul>
+<li>多台设备连接到同一网络，可以通过广播方式进行通信。</li>
+<li>适用于较大的网络，如局域网。</li>
+</ul>
+</li>
+<li>星型网络（Star Network）:<!-- -->
+<ul>
+<li>所有设备都连接到一个中央设备，中央设备负责转发通信。</li>
+<li>常见于局域网和城域网。</li>
+</ul>
+</li>
+<li>环型网络（Ring Network）:<!-- -->
+<ul>
+<li>设备按照环形连接，数据沿着环路传递。</li>
+<li>比较少见，通常在小型网络中使用。</li>
+</ul>
+</li>
+<li>树型网络（Tree Network）:<!-- -->
+<ul>
+<li>设备按照层级结构连接，形成一个树状拓扑。</li>
+<li>适用于组织结构清晰的大型网络。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>按照使用的协议分类：</li>
+</ol>
+<ul>
+<li>互联网（Internet）:<!-- -->
+<ul>
+<li>由全球范围的网络连接而成，使用TCP/IP协议。</li>
+<li>提供全球性的信息交流和服务。</li>
+</ul>
+</li>
+<li>局域网协议（LAN Protocol）:</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="网络设备">网络设备<a href="#网络设备" class="hash-link" aria-label="网络设备的直接链接" title="网络设备的直接链接">​</a></h2>
+<ol>
+<li>路由器（Router）:</li>
+</ol>
+<ul>
+<li>功能： 在不同网络之间传递数据包，决定数据包的最佳路径。</li>
+<li>特点： 工作在网络层（第三层），具有路由表来决定数据的路由。</li>
+</ul>
+<ol start="2">
+<li>交换机（Switch）:</li>
+</ol>
+<ul>
+<li>功能： 在同一网络内部连接多个设备，实现内部数据包的高效交换。</li>
+<li>特点： 工作在数据链路层（第二层），使用MAC地址进行帧的转发。</li>
+</ul>
+<ol start="3">
+<li>集线器（Hub）:</li>
+</ol>
+<ul>
+<li>功能： 用于连接多个设备，将数据广播到所有连接的设备。</li>
+<li>特点： 工作在物理层，不具备智能功能，数据包会被广播到所有端口。</li>
+</ul>
+<ol start="4">
+<li>网桥（Bridge）:</li>
+</ol>
+<ul>
+<li>功能： 连接两个或多个网络，实现数据包的转发。</li>
+<li>特点： 工作在数据链路层，能够学习和过滤MAC地址。</li>
+</ul>
+<ol start="5">
+<li>网关（Gateway）:</li>
+</ol>
+<ul>
+<li>功能： 在不同网络或协议之间进行数据转换，实现互联互通。</li>
+<li>特点： 可以连接异构网络，如将局域网连接到互联网。</li>
+</ul>
+<ol start="6">
+<li>防火墙（Firewall）:</li>
+</ol>
+<ul>
+<li>功能： 用于监控和控制网络流量，保护网络免受未经授权的访问。</li>
+<li>特点： 过滤和阻止不安全的数据流，提高网络的安全性。</li>
+</ul>
+<ol start="7">
+<li>调制解调器（Modem）:</li>
+</ol>
+<ul>
+<li>功能： 将数字数据转换为模拟信号，使计算机能够通过电话线等模拟信道进行通信。</li>
+<li>特点： 用于在数字设备和模拟信道之间进行数据传输。</li>
+</ul>
+<ol start="8">
+<li>接入点（Access Point，AP）:</li>
+</ol>
+<ul>
+<li>功能： 提供无线网络连接，允许无线设备连接到有线网络。</li>
+<li>特点： 通常与无线局域网（WLAN）一起使用，用于扩展有线网络的覆盖范围。</li>
+</ul>
+<ol start="9">
+<li>网卡（Network Interface Card，NIC）:</li>
+</ol>
+<ul>
+<li>功能： 允许计算机连接到网络，将数字数据转换为网络可识别的格式。</li>
+<li>特点： 安装在计算机上，通常是以太网卡或无线网卡。</li>
+</ul>
+<ol start="10">
+<li>中继器（Repeater）:</li>
+</ol>
+<ul>
+<li>功能： 用于增强信号的传输距离，扩展网络的覆盖范围。</li>
+<li>特点： 工作在物理层，对信号进行放大和转发。</li>
+</ul>
+<ol start="11">
+<li>负载均衡器（Load Balancer）:</li>
+</ol>
+<ul>
+<li>功能： 在多个服务器之间分配负载，确保流量均匀分布，提高性能和可用性。</li>
+<li>特点： 通过智能算法分发请求，避免某个服务器过载。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="七层协议模型">七层协议模型<a href="#七层协议模型" class="hash-link" aria-label="七层协议模型的直接链接" title="七层协议模型的直接链接">​</a></h2>
+<ol>
+<li>物理层（Physical Layer）:</li>
+</ol>
+<ul>
+<li>物理层关注的是网络的硬件部分，即通过网络传输的原始比特流。这包括传输媒体、信号传输、物理拓扑等。常见的物理层技术包括电缆、光纤、无线传输等。</li>
+</ul>
+<ol start="2">
+<li>数据链路层（Data Link Layer）:</li>
+</ol>
+<ul>
+<li>数据链路层负责将物理层提供的比特流组织成数据帧，并提供可靠的点对点或点对多点的通信。在这一层，通常会有MAC（Media Access Control）地址用于设备的唯一标识。</li>
+</ul>
+<ol start="3">
+<li>网络层（Network Layer）:</li>
+</ol>
+<ul>
+<li>网络层是整个网络体系结构的核心，负责路由数据包从源主机到目标主机。IP协议是网络层的核心协议，它为主机提供唯一的逻辑地址。</li>
+</ul>
+<ol start="4">
+<li>传输层（Transport Layer）:</li>
+</ol>
+<ul>
+<li>传输层提供端到端的通信，主要协议有TCP（Transmission Control Protocol）和UDP（User Datagram Protocol）。TCP提供可靠的、面向连接的通信，而UDP提供不可靠但更高效的通信。</li>
+</ul>
+<ol start="5">
+<li>会话层（Session Layer）:</li>
+</ol>
+<ul>
+<li>会话层负责建立、管理和终止应用程序之间的会话。它提供了对话控制，以确保数据的正确流动。</li>
+</ul>
+<ol start="6">
+<li>表示层（Presentation Layer）:</li>
+</ol>
+<ul>
+<li>表示层负责数据的格式转换和加密。它确保不同计算机上的应用程序能够正确地解释交换的数据。</li>
+</ul>
+<ol start="7">
+<li>应用层（Application Layer）:</li>
+</ol>
+<ul>
+<li>应用层是最靠近用户的一层，提供用户接口和网络服务。常见的应用层协议有HTTP、FTP、SMTP等。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="分布式系统">分布式系统<a href="#分布式系统" class="hash-link" aria-label="分布式系统的直接链接" title="分布式系统的直接链接">​</a></h2>
+<blockquote>
+<p>分布式系统是由多个独立的计算机组成，这些计算机通过网络进行通信和协作，共同完成一个任务或提供某种服务。分布式系统旨在解决单个计算机无法处理的复杂问题，同时提高系统的性能、可靠性和扩展性。</p>
+</blockquote>
+<ol>
+<li>分布式系统的特点：</li>
+</ol>
+<ul>
+<li>多节点： 分布式系统由多个节点（计算机）组成，这些节点可以分布在不同的地理位置。</li>
+<li>网络通信： 节点通过网络进行通信，交换数据和信息。</li>
+<li>并发性： 多个节点可以并行执行任务，提高整体系统的性能。</li>
+<li>透明性： 用户和应用程序对系统内部的分布式结构是透明的，他们感觉像是在使用一个单一的系统。</li>
+<li>容错性： 分布式系统通常具有容错机制，即使其中一部分发生故障，整体系统仍能保持可用。</li>
+<li>可扩展性： 可以通过增加节点的方式扩展系统的处理能力，适应不断增长的需求。</li>
+</ul>
+<ol start="2">
+<li>分布式系统的架构模型：</li>
+</ol>
+<ul>
+<li>客户端-服务器模型： 系统分为客户端和服务器，客户端发送请求，服务器提供服务。</li>
+<li>对等模型： 所有节点都是对等的，可以提供服务和请求服务。</li>
+<li>主从模型： 有一个主节点负责协调和管理其他从节点的工作。</li>
+</ul>
+<ol start="3">
+<li>分布式系统的挑战和问题：</li>
+</ol>
+<ul>
+<li>一致性和一致性模型： 如何确保分布式系统的多个副本保持一致性是一个挑战。</li>
+<li>数据同步和复制： 多个节点之间的数据同步和复制可能导致一致性和性能问题。</li>
+<li>通信延迟和带宽： 不同节点之间的通信延迟和带宽限制可能影响系统性能。</li>
+<li>故障处理和恢复： 节点故障的发现、处理和系统的恢复是一个重要问题。</li>
+<li>安全性和隐私： 分布式系统需要处理安全性和隐私保护等问题。</li>
+</ul>
+<ol start="4">
+<li>分布式系统的应用：</li>
+</ol>
+<ul>
+<li>云计算： 云服务提供商使用分布式系统提供虚拟化资源和服务。</li>
+<li>大数据处理： 分布式系统用于处理大规模数据集，如分布式存储和数据分析。</li>
+<li>分布式数据库： 提供高可用性和容错性的分布式数据库系统。</li>
+<li>分布式计算： 利用多个计算节点并行处理复杂的计算任务。</li>
+<li>物联网（IoT）： 分布式系统用于连接和协调大量物联网设备。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="internet互联网">Internet（互联网）<a href="#internet互联网" class="hash-link" aria-label="Internet（互联网）的直接链接" title="Internet（互联网）的直接链接">​</a></h2>
+<blockquote>
+<p>Internet（互联网）的整体结构是一个分层的体系结构，它采用了一种称为TCP/IP协议栈的协议套件。这个分层结构有助于实现网络的灵活性、可扩展性和互操作性。</p>
+</blockquote>
+<ol>
+<li>物理层（Physical Layer）：</li>
+</ol>
+<ul>
+<li>物理层包括连接到互联网的各种物理设备，如计算机、路由器、交换机、服务器等。这些设备通过各种传输媒介，如光纤、电缆、无线信号等，连接到互联网。</li>
+</ul>
+<ol start="2">
+<li>链路层（Link Layer）：</li>
+</ol>
+<ul>
+<li>链路层负责在直接相连的两个节点之间进行数据传输。它定义了在相邻节点之间的数据帧的格式和传输规则，通常使用MAC（Media Access Control）地址来标识设备。</li>
+</ul>
+<ol start="3">
+<li>网络层（Network Layer）：</li>
+</ol>
+<ul>
+<li>网络层是Internet的核心，它负责在不同网络之间进行数据包的路由和转发。主要的网络层协议是IP（Internet Protocol），它为数据包提供了源和目标地址，使得数据能够在全球范围内进行传输。</li>
+</ul>
+<ol start="4">
+<li>传输层（Transport Layer）：</li>
+</ol>
+<ul>
+<li>传输层负责端到端的通信，主要使用TCP（Transmission Control Protocol）和UDP（User Datagram Protocol）协议。TCP提供可靠的、面向连接的通信，而UDP提供不可靠的、面向无连接的通信。</li>
+</ul>
+<ol start="5">
+<li>应用层（Application Layer）：</li>
+</ol>
+<ul>
+<li>应用层是用户和网络之间的接口，包括各种应用协议，如HTTP（用于Web浏览器和服务器之间的通信）、SMTP（用于电子邮件传输）、FTP（用于文件传输）等。这一层包含了用户直接与之交互的各种应用。</li>
+</ul>
+<ol start="6">
+<li>互联网服务提供商（ISP）：</li>
+</ol>
+<ul>
+<li>互联网服务提供商是连接个人用户和组织到互联网的关键部分。它们提供了Internet接入服务，允许用户通过各种方式（如光纤、DSL、电缆、无线等）连接到互联网。</li>
+</ul>
+<ol start="7">
+<li>IXP（Internet Exchange Point）：</li>
+</ol>
+<ul>
+<li>IXP是互联网中用于不同ISP之间直接交换流量的关键设施。它允许不同网络之间的数据直接交换，提高数据传输的效率。</li>
+</ul>
+<ol start="8">
+<li>根域名服务器（Root DNS Server）：</li>
+</ol>
+<ul>
+<li>根域名服务器是DNS（域名系统）的关键组件之一，它存储了顶级域名服务器的地址，帮助解析域名并将其转换为IP地址。</li>
+</ul>
+<ol start="9">
+<li>顶级域名服务器（Top-Level Domain Servers）：</li>
+</ol>
+<ul>
+<li>顶级域名服务器存储了顶级域名（如.com、.org、.net等）的IP地址信息，帮助进行域名解析。</li>
+</ul>
+<ol start="10">
+<li>边缘服务器和内容分发网络（CDN）：</li>
+</ol>
+<ul>
+<li>边缘服务器和CDN分布在全球各地，用于缓存和提供静态内容，以提高用户访问网站的速度和性能。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="相关概念">相关概念<a href="#相关概念" class="hash-link" aria-label="相关概念的直接链接" title="相关概念的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="路由器">路由器<a href="#路由器" class="hash-link" aria-label="路由器的直接链接" title="路由器的直接链接">​</a></h3>
+<blockquote>
+<p>在一个大城市里，而这个城市被划分为几个不同的区域。每个区域都有一个邮局，负责处理该区域的邮件。如果你想要将信从一个区域寄到另一个区域，邮件就会通过中央邮局（路由器）进行处理。中央邮局知道如何将信从一个区域送到另一个区域，并且能够连接不同区域的邮局。</p>
+</blockquote>
+<p>在网络中，路由器就像这个中央邮局，它连接着不同的网络（区域），并且知道如何将数据从一个网络传送到另一个网络。它基于网络地址（IP地址）来决定数据的最佳路径。</p>
+<ol>
+<li>功能：</li>
+</ol>
+<ul>
+<li>路由器主要用于连接不同的网络，并在这些网络之间传递数据包。它可以在网络之间进行路由决策，确定数据包的最佳路径，以确保数据从源主机到目标主机的有效传输。</li>
+</ul>
+<ol start="2">
+<li>工作层次：</li>
+</ol>
+<ul>
+<li>路由器主要工作在网络层（第三层）上，负责处理IP数据包。它具有查找路由表、决策最佳路径、转发数据包的功能。</li>
+</ul>
+<ol start="3">
+<li>适用场景：</li>
+</ol>
+<ul>
+<li>路由器通常用于连接不同的局域网（LAN）或广域网（WAN），处理跨越不同子网或网络的数据传输。</li>
+</ul>
+<ol start="4">
+<li>特点：</li>
+</ol>
+<ul>
+<li>路由器能够识别目标IP地址，并根据路由表决定下一跳的路径。它是一种智能设备，能够进行网络分割、隔离和安全控制。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="交换机">交换机<a href="#交换机" class="hash-link" aria-label="交换机的直接链接" title="交换机的直接链接">​</a></h3>
+<blockquote>
+<p>想象一下你在同一个区域内有多个人之间需要寄送信件。每个人都有自己的邮箱，而一个交换中心（交换机）则帮助大家直接把信从一个邮箱传递到另一个邮箱，而无需经过中央邮局。</p>
+</blockquote>
+<p>在网络中，交换机就像这个交换中心，它直接连接着同一网络中的多台计算机。当一台计算机想要与另一台计算机进行通信时，交换机可以直接将数据包送到目标计算机的位置，而不需要经过路由器。它基于设备的物理地址（MAC地址）来决定数据包的传递路径。</p>
+<ol>
+<li>功能：</li>
+</ol>
+<ul>
+<li>交换机用于在同一网络内部连接多个设备，提供内部数据包交换服务。它通过学习和过滤MAC地址来确定数据包的转发路径，从而实现快速、可靠的数据交换。</li>
+</ul>
+<ol start="2">
+<li>工作层次：</li>
+</ol>
+<ul>
+<li>交换机主要工作在数据链路层（第二层），处理以太网帧。它基于设备的MAC地址进行帧的转发。</li>
+</ul>
+<ol start="3">
+<li>适用场景：</li>
+</ol>
+<ul>
+<li>交换机常用于局域网内部，连接多台计算机和其他网络设备。它加速了局域网内部设备之间的通信。</li>
+</ul>
+<ol start="4">
+<li>特点：</li>
+</ol>
+<ul>
+<li>交换机能够在局域网内部直接转发数据，而无需进行广播。它是一种高性能、低延迟的设备，适用于要求高速、可靠通信的环境。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="路由器和交换机的区别">路由器和交换机的区别<a href="#路由器和交换机的区别" class="hash-link" aria-label="路由器和交换机的区别的直接链接" title="路由器和交换机的区别的直接链接">​</a></h3>
+<ol>
+<li>工作层次： 路由器工作在网络层，而交换机工作在数据链路层。</li>
+<li>范围： 路由器连接不同的网络，而交换机连接同一网络内的设备。</li>
+<li>决策依据： 路由器基于IP地址进行路由决策，而交换机基于MAC地址进行数据帧的转发。</li>
+<li>分割能力： 路由器能够将不同的网络分割，提供网络隔离和安全控制。交换机在同一网络内部进行设备间的快速通信。</li>
+<li>广播： 路由器不会广播数据包，而交换机在学习MAC地址后，可以有选择地进行数据包的转发。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="网桥bridge">网桥（Bridge）<a href="#网桥bridge" class="hash-link" aria-label="网桥（Bridge）的直接链接" title="网桥（Bridge）的直接链接">​</a></h3>
+<blockquote>
+<p>在日常生活中，拓展局域网最常见的方法是使用网桥。最简单的网桥有两个端口，复杂些的网桥可以有更多的端口。网桥的每个端口与一个网段相连。</p>
+</blockquote>
+<ol>
+<li>局域网扩展： 网桥用于连接两个或多个局域网，将它们扩展为一个更大的网络。这有助于减少网络拥堵，提高通信效率。</li>
+<li>隔离流量： 在较大的网络中，网桥可以帮助隔离不同的工作组或部门，确保它们的通信不会干扰其他部分的网络。</li>
+<li>传输协议转换： 网桥可以连接使用不同数据链路层协议的网络，如将以太网和Wi-Fi连接在一起。</li>
+<li>无线局域网扩展： 在无线网络中，网桥可以连接有线网络和无线网络，扩展无线覆盖范围。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="网关gateway">网关（Gateway）<a href="#网关gateway" class="hash-link" aria-label="网关（Gateway）的直接链接" title="网关（Gateway）的直接链接">​</a></h3>
+<ol>
+<li>互联网连接： 网关用于连接局域网与互联网，充当本地网络与外部网络之间的桥梁。它处理内部网络与互联网之间的通信，并执行网络地址转换（NAT）等功能。</li>
+<li>协议转换： 网关可用于执行不同协议之间的转换。例如，将局域网中的设备通过网关连接到因特网时，网关可能要执行TCP/IP到PPP或其他协议的转换。</li>
+<li>安全防护： 网关可以充当防火墙，监控和过滤网络流量，以保护内部网络免受未经授权的访问和恶意攻击。</li>
+<li>连接异构网络： 网关可用于连接使用不同网络技术的网络，例如连接以太网和无线网络，或连接IPv4和IPv6网络。</li>
+<li>电子商务支付： 在电子商务中，网关用于处理支付事务，确保安全传输客户付款信息。</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="拓展知识">拓展知识<a href="#拓展知识" class="hash-link" aria-label="拓展知识的直接链接" title="拓展知识的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="前端网关">前端网关<a href="#前端网关" class="hash-link" aria-label="前端网关的直接链接" title="前端网关的直接链接">​</a></h3>
+<blockquote>
+<p>前端网关（Front-end Gateway）是一个应用在前端层面的服务器，通常用于处理前端资源的请求、路由、以及其他与用户界面相关的操作。它在前端应用和后端服务之间充当了一个中间层，用于协调和管理前端资源的交付。</p>
+</blockquote>
+<ol>
+<li>路由和导航： 前端网关可以处理前端应用的路由和导航，根据用户的访问路径展示不同的页面或组件。</li>
+<li>资源加载和缓存： 网关可以负责加载前端应用所需的资源，如JavaScript、CSS、图像等，并可以管理这些资源的缓存，以提高应用性能。</li>
+<li>API请求代理： 如果前端应用需要从不同的后端服务请求数据，前端网关可以代理这些请求，集中处理 API 请求，简化前端与多个后端服务之间的交互。</li>
+<li>用户身份验证和授权： 前端网关可以处理用户的身份验证和授权，确保用户访问的资源和操作是合法的。</li>
+<li>性能优化： 通过对资源的合并、压缩、懒加载等手段，前端网关可以帮助优化前端应用的性能。</li>
+<li>错误处理： 网关可以捕获前端应用中的错误，并进行适当的处理和记录，以便进行故障排除和监控。</li>
+<li>日志记录： 前端网关可以记录用户的行为和前端应用的运行情况，为开发者提供有用的日志信息。</li>
+<li>A/B测试和分流： 前端网关可以实现 A/B 测试，将用户分流到不同的实验组，以评估不同版本的前端应用的效果。</li>
+</ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/docs/web/计算机科学/编译原理"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">编译原理</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/docs/category/算法基础"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">算法基础</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#核心概念" class="table-of-contents__link toc-highlight">核心概念</a></li><li><a href="#网络分类" class="table-of-contents__link toc-highlight">网络分类</a></li><li><a href="#网络设备" class="table-of-contents__link toc-highlight">网络设备</a></li><li><a href="#七层协议模型" class="table-of-contents__link toc-highlight">七层协议模型</a></li><li><a href="#分布式系统" class="table-of-contents__link toc-highlight">分布式系统</a></li><li><a href="#internet互联网" class="table-of-contents__link toc-highlight">Internet（互联网）</a></li><li><a href="#相关概念" class="table-of-contents__link toc-highlight">相关概念</a><ul><li><a href="#路由器" class="table-of-contents__link toc-highlight">路由器</a></li><li><a href="#交换机" class="table-of-contents__link toc-highlight">交换机</a></li><li><a href="#路由器和交换机的区别" class="table-of-contents__link toc-highlight">路由器和交换机的区别</a></li><li><a href="#网桥bridge" class="table-of-contents__link toc-highlight">网桥（Bridge）</a></li><li><a href="#网关gateway" class="table-of-contents__link toc-highlight">网关（Gateway）</a></li></ul></li><li><a href="#拓展知识" class="table-of-contents__link toc-highlight">拓展知识</a><ul><li><a href="#前端网关" class="table-of-contents__link toc-highlight">前端网关</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/robbiemie" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://blog.csdn.net/u013243347" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project.</div></div></div></footer></div>
+</body>
+</html>
