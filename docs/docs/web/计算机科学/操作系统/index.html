@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-web/计算机科学/操作系统" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">操作系统 | 知识储备库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://yangoogle.com/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://yangoogle.com/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://yangoogle.com/docs/docs/web/计算机科学/操作系统"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="操作系统 | 知识储备库"><meta data-rh="true" name="description" content="操作系统（Operating System，简称OS）是一种系统软件，是计算机系统中的核心软件之一。它负责管理和协调计算机硬件和软件资源，为用户和应用程序提供服务，以实现计算机系统的有效运行。操作系统扮演着资源管理者、任务调度器、用户接口提供者等多重角色。"><meta data-rh="true" property="og:description" content="操作系统（Operating System，简称OS）是一种系统软件，是计算机系统中的核心软件之一。它负责管理和协调计算机硬件和软件资源，为用户和应用程序提供服务，以实现计算机系统的有效运行。操作系统扮演着资源管理者、任务调度器、用户接口提供者等多重角色。"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://yangoogle.com/docs/docs/web/计算机科学/操作系统"><link data-rh="true" rel="alternate" href="https://yangoogle.com/docs/docs/web/计算机科学/操作系统" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://yangoogle.com/docs/docs/web/计算机科学/操作系统" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Web 基础知识点","item":"https://yangoogle.com/docs/docs/category/web-基础知识点"},{"@type":"ListItem","position":2,"name":"操作系统","item":"https://yangoogle.com/docs/docs/web/计算机科学/操作系统"}]}</script><link rel="alternate" type="application/rss+xml" href="/docs/blog/rss.xml" title="知识储备库 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/docs/blog/atom.xml" title="知识储备库 Atom Feed"><link rel="stylesheet" href="/docs/assets/css/styles.61e3011e.css">
+<script src="/docs/assets/js/runtime~main.d684f69a.js" defer="defer"></script>
+<script src="/docs/assets/js/main.21183c90.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs/img/logo.svg"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs/"><div class="navbar__logo"><img src="/docs/img/logo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs/img/logo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Robbie Yang</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/docs/category/web-基础知识点">Tutorial</a><a class="navbar__item navbar__link" href="/docs/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/robbiemie" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/docs/category/web-基础知识点">Web 基础知识点</a><button aria-label="折叠侧边栏分类 &#x27;Web 基础知识点&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/html/HTML基础">html</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/css/CSS 基础">css</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/js,ts/javascript">js,ts</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/编码/LRU缓存算法">编码</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/网络/DNS">网络</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/浏览器/浏览器架构设计">浏览器</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/cicd/Docker">cicd</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/构建工具/webpack/webpack模块化">构建工具</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/git/Git 基础">git</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/正则表达式/正则表达式">正则表达式</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/vue/MVVM">vue</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/react/react概述">react</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/reactNative/RN原理">reactNative</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/ssr/nuxt">ssr</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/typescript/ts/类型体操">typescript</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/web性能优化/webpack分析优化">web性能优化</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/docs/web/计算机科学/计算机组成原理">计算机科学</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/计算机组成原理">计算机组成原理</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/docs/web/计算机科学/操作系统">操作系统</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/编译原理">编译原理</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/计算机网络">计算机网络</a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/docs/category/算法基础">算法基础</a><button aria-label="展开侧边栏分类 &#x27;算法基础&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/docs/category/摄影知识">摄影知识</a><button aria-label="展开侧边栏分类 &#x27;摄影知识&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/docs/category/web-基础知识点"><span>Web 基础知识点</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">计算机科学</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">操作系统</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>操作系统</h1></header>
+<blockquote>
+<p>操作系统（Operating System，简称OS）是一种系统软件，是计算机系统中的核心软件之一。它负责管理和协调计算机硬件和软件资源，为用户和应用程序提供服务，以实现计算机系统的有效运行。操作系统扮演着资源管理者、任务调度器、用户接口提供者等多重角色。</p>
+</blockquote>
+<p>常见的操作系统包括：</p>
+<ul>
+<li>Windows： 由微软公司开发的操作系统，广泛应用于个人计算机。</li>
+<li>Linux： 一种开源的Unix-like操作系统内核，可以被用于各种设备和用途。</li>
+<li>macOS： 苹果公司的操作系统，运行于Macintosh计算机上。</li>
+<li>Unix： 一类多用户、多任务操作系统的家族，包括许多变种，如AIX、Solaris等。</li>
+<li>Android： 面向移动设备的操作系统，基于Linux内核。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="基础概念">基础概念<a href="#基础概念" class="hash-link" aria-label="基础概念的直接链接" title="基础概念的直接链接">​</a></h2>
+<ul>
+<li>进程: 一个执行中的程序实例, 拥有独立的内存空间和资源</li>
+<li>线程: 一个进程内的执行单元, 共享进程的内存空间和资源</li>
+<li>进程和线程对比<!-- -->
+<ul>
+<li>创建、切换和终止的开销: 进程 &gt; 线程</li>
+<li>内存和资源: 线程共享进程的内存和资源, 进程之间独立内存和资源</li>
+<li>通信: 进程间通信 IPC, 线程共用地址空间通过变量或数据结构通信</li>
+<li>独立: 线程之间会影响, 比如某一线程崩溃可能会引起另一线程也崩溃, 进程不会</li>
+<li>数据资源保护: 进程资源隔离, 无需同步机制保护. 线程通过信号量、锁等确保对共享数据的正确访问</li>
+</ul>
+</li>
+<li>吞吐量<!-- -->
+<ul>
+<li>定义: 操作系统在单位时间内能够创建、管理和终止的进程或线程的数量</li>
+</ul>
+</li>
+<li>栈<!-- -->
+<ul>
+<li>生长方向: 从内存高地址到低地址.<!-- -->
+<ul>
+<li>设计原因<!-- -->
+<ul>
+<li>栈和堆生长方向相反会导致他们相遇, 确保了最大的内存利用率, 固定栈的大小以及堆的动态分配添加新内存块</li>
+<li>栈内存占用通常较小, 放在高地址向下生长提升内存利用率</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内存管理: 自动管理, 函数返回自动释放内存</li>
+<li>内存分配: 预先分配, 有内存限制. 由单个连续内存块组成（临时内存）</li>
+<li>用途: 局部变量, 函数参数、调用、返回相关信息</li>
+<li>访问速度: 快, 数据存储是连续的，并且存取操作是预测性的</li>
+</ul>
+</li>
+<li>堆<!-- -->
+<ul>
+<li>生长方向: 从内存低地址到高地址</li>
+<li>内存管理: 手动管理如垃圾回收、内存碎片处理, 释放内存</li>
+<li>内存分配: 程序可用的物理内存和虚拟内存大小. 由多个不连续的内存块组成</li>
+<li>用途: 动态分配内存</li>
+<li>访问速度: 慢, 需要寻找一个合适的内存块</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="系统启动">系统启动<a href="#系统启动" class="hash-link" aria-label="系统启动的直接链接" title="系统启动的直接链接">​</a></h2>
+<ul>
+<li>引导: 计算机启动时, 将操作系统从磁盘传输到内存上</li>
+<li>引导加载器（BootLoader）：存储在启动设备上的这个程序负责加载操作系统内核</li>
+<li>启动过程: 固件 -&gt; 引导程序 -&gt; 内核<!-- -->
+<ul>
+<li>电源启动. 初始化关键硬件, CPU、RAM、显卡等.</li>
+<li>cpu 启动. cpu 从预设内存地址开始执行, 这通常是一个指向主板上非易失性存储器（如 Flash ROM）中的固件（如 BIOS）的地址</li>
+<li>引导程序. 固件初始化硬件, 搜索启动设备(硬盘, usb), 固件从所选的启动设备的启动扇区读取并加载引导程序到 RAM, 将控制权转让给引导程序</li>
+<li>加载内核. 引导程序从存储设备找到操作系统内核并将其加载到 RAM 中</li>
+<li>启动内核. 内核加载到 RAM 后, 控制权转让给内核</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="系统架构自顶向下">系统架构（自顶向下）<a href="#系统架构自顶向下" class="hash-link" aria-label="系统架构（自顶向下）的直接链接" title="系统架构（自顶向下）的直接链接">​</a></h2>
+<blockquote>
+<p>操作系统的架构可以从上到下（自顶向下）分为多个层次，每个层次负责不同的功能。以下是典型的操作系统架构，自顶向下的层次结构：</p>
+</blockquote>
+<ol>
+<li>用户界面层（User Interface Layer）：</li>
+</ol>
+<ul>
+<li>用户接口： 提供用户与操作系统交互的界面，可以是图形用户界面（GUI）或命令行界面（CLI）。</li>
+</ul>
+<ol start="2">
+<li>应用程序层（Application Layer）：</li>
+</ol>
+<ul>
+<li>应用程序： 包括用户编写的各种应用程序，如文本编辑器、浏览器、游戏等。</li>
+</ul>
+<ol start="3">
+<li>应用程序编程接口（API）层（API Layer）：</li>
+</ol>
+<ul>
+<li>API： 提供给应用程序的接口，允许应用程序与操作系统进行交互。常见的API包括系统调用、库函数等。</li>
+</ul>
+<ol start="4">
+<li>系统调用接口层（System Call Interface Layer）：</li>
+</ol>
+<ul>
+<li>系统调用： 提供给应用程序的接口，允许应用程序请求操作系统提供的服务，如文件操作、进程管理等。</li>
+</ul>
+<ol start="5">
+<li>用户支持层（User Support Layer）：</li>
+</ol>
+<ul>
+<li>用户支持服务： 包括各种支持服务，如用户身份验证、文件系统访问控制等。</li>
+</ul>
+<ol start="6">
+<li>进程管理层（Process Management Layer）：</li>
+</ol>
+<ul>
+<li>进程控制： 管理系统中的进程，包括进程的创建、调度、同步和通信。</li>
+</ul>
+<ol start="7">
+<li>存储管理层（Memory Management Layer）：</li>
+</ol>
+<ul>
+<li>内存管理： 负责系统内存的分配和释放，以及虚拟内存的管理。</li>
+</ul>
+<ol start="8">
+<li>文件系统层（File System Layer）：</li>
+</ol>
+<ul>
+<li>文件系统： 提供对文件和目录的管理，包括文件的创建、读取、写入和删除等操作。</li>
+</ul>
+<ol start="9">
+<li>设备驱动程序层（Device Driver Layer）：</li>
+</ol>
+<ul>
+<li>设备驱动程序： 提供与硬件设备的通信接口，使得操作系统可以控制硬件设备。</li>
+</ul>
+<ol start="10">
+<li>内核层（Kernel Layer）：</li>
+</ol>
+<ul>
+<li>内核： 包含操作系统的核心部分，管理系统资源、执行系统调用，并处理中断和异常。</li>
+</ul>
+<ol start="11">
+<li>硬件抽象层（Hardware Abstraction Layer）：</li>
+</ol>
+<ul>
+<li>硬件抽象： 提供对底层硬件的抽象，使得操作系统能够在不同硬件平台上运行。</li>
+</ul>
+<p>整个操作系统的架构是一个分层的结构，每一层都建立在下一层的基础上，并为上一层提供服务。这种层次结构有助于模块化设计、可维护性和可移植性。每个层次的模块都有明确定义的接口，使得不同层次的开发人员能够独立地工作。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="核心概念">核心概念<a href="#核心概念" class="hash-link" aria-label="核心概念的直接链接" title="核心概念的直接链接">​</a></h2>
+<p>以下是操作系统的一些核心概念:</p>
+<ol>
+<li>进程（Process）： 进程是程序的一次执行，是操作系统中的基本执行单元。它包括代码、数据和执行环境。操作系统通过进程管理来调度和控制程序的执行。</li>
+<li>线程（Thread）： 线程是进程中的一个独立执行路径，共享进程的资源。多线程使得程序可以并发执行，提高系统的性能和响应能力。</li>
+<li>调度（Scheduling）： 调度是操作系统中的一个重要功能，负责决定哪个进程或线程在何时执行。调度算法的选择影响系统的性能和响应时间。</li>
+<li>内存管理（Memory Management）： 内存管理涉及分配和释放内存空间，以及虚拟内存的管理。它确保每个程序都能获得足够的内存空间，并防止程序之间相互干扰。</li>
+<li>文件系统（File System）： 文件系统负责管理计算机存储设备上的文件和目录。它提供了对文件的读写、创建、删除等操作，以及对文件和目录的组织结构。</li>
+<li>设备驱动程序（Device Drivers）： 设备驱动程序是连接操作系统和硬件设备的软件模块。它们负责将操作系统的抽象接口转换成硬件能理解的命令。</li>
+<li>输入/输出（I/O）管理： I/O管理涉及处理计算机与外部设备之间的数据传输。它包括缓冲、中断处理、设备控制等方面的功能。</li>
+<li>系统调用（System Call）： 系统调用是应用程序与操作系统之间的接口，允许应用程序请求操作系统提供的服务。常见的系统调用包括文件操作、进程控制等。</li>
+<li>中断（Interrupt）： 中断是硬件或软件引起的事件，它打断当前正在执行的程序。操作系统通过中断处理程序响应和处理中断，保证系统的正常运行。</li>
+<li>虚拟化（Virtualization）： 虚拟化技术允许在一个物理计算机上运行多个虚拟机，每个虚拟机具有自己的操作系统和应用程序，从而提高硬件资源的利用率。</li>
+<li>安全性与权限控制： 操作系统负责确保系统的安全性，包括用户身份验证、访问控制、数据加密等。</li>
+<li>分布式系统： 分布式系统是由多台计算机组成的系统，它们通过网络连接并协同工作。操作系统在分布式系统中负责资源管理和通信。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="时间分片">时间分片<a href="#时间分片" class="hash-link" aria-label="时间分片的直接链接" title="时间分片的直接链接">​</a></h3>
+<blockquote>
+<p>时间分片是操作系统中一种用于实现多任务调度的机制。在多任务环境中，多个任务（进程或线程）共享CPU的执行时间。时间分片机制通过将CPU时间划分为小的时间片段，每个任务在一个时间片段内执行，然后切换到下一个任务，从而实现多任务的轮转执行。</p>
+</blockquote>
+<p>以下是时间分片的详细概念：</p>
+<ol>
+<li>基本原理： 时间分片的基本原理是将总体可用的CPU时间划分为固定长度的时间片，每个时间片分配给一个任务。当一个任务的时间片用完时，操作系统会暂停该任务的执行，保存其状态，并切换到下一个任务。这个过程不断重复，形成了任务的轮转执行。</li>
+<li>调度器： 操作系统中的调度器负责决定当前应该运行哪个任务。它按照时间分片的方式进行调度，确保每个任务都有机会执行。调度器的工作是在任务之间进行切换，维护任务的运行状态信息。</li>
+<li>时间片长度： 时间片的长度是一个重要的调优参数。较短的时间片可以使任务更频繁地切换，增加系统响应速度，但可能引入一些上下文切换的开销。较长的时间片减少了上下文切换的频率，但可能导致任务响应较慢。</li>
+<li>公平性： 时间分片的机制有助于保证多个任务的公平性。每个任务都有机会占用CPU执行，而不会长时间地独占CPU资源。这有助于防止某个任务长时间运行而导致其他任务无法得到执行的情况。</li>
+<li>实时系统： 在实时系统中，时间分片的长度可能是固定的，以确保系统对于特定的实时任务能够满足响应时间的要求。实时系统通常需要更精确的任务调度。</li>
+<li>优先级调度： 时间分片可以与优先级调度结合使用。不同任务可能具有不同的优先级，高优先级的任务可以在时间片结束前抢占低优先级任务的执行。</li>
+<li>抢占式和非抢占式： 在抢占式的时间分片调度中，操作系统可以在一个任务的执行中抢占CPU，切换到其他任务。而在非抢占式的时间分片调度中，任务只有在自愿放弃CPU时才会被切换。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="调度器">调度器<a href="#调度器" class="hash-link" aria-label="调度器的直接链接" title="调度器的直接链接">​</a></h3>
+<blockquote>
+<p>CPU调度器是操作系统中的一个重要组件，负责管理和调度系统中的进程或线程，以便有效地利用CPU资源。其主要目标是提高系统的性能、响应时间和公平性。以下是有关CPU调度器的详细讨论：</p>
+</blockquote>
+<ol>
+<li>基本概念：</li>
+</ol>
+<ul>
+<li>进程和线程： CPU调度器管理的主体是进程或线程。进程是程序的一次执行，而线程是进程中的一个独立执行路径。</li>
+<li>上下文切换： 当调度器切换到一个新的进程或线程时，需要保存当前执行任务的上下文信息，并加载下一个任务的上下文，这个过程称为上下文切换。</li>
+</ul>
+<ol start="2">
+<li>调度算法：</li>
+</ol>
+<ul>
+<li>先来先服务（FCFS）： 按照任务到达的顺序进行调度。简单但可能导致短任务等待长任务。</li>
+<li>最短作业优先（SJF）： 选择执行时间最短的任务，以最小化平均等待时间。</li>
+<li>轮转调度（Round Robin）： 每个任务被分配一个时间片，按照轮流的方式执行。适用于时间分片调度。</li>
+<li>多级反馈队列调度： 将任务分配到多个队列，根据任务的优先级和历史行为进行调度。</li>
+</ul>
+<ol start="3">
+<li>优先级和抢占：</li>
+</ol>
+<ul>
+<li>优先级调度： 给任务分配优先级，高优先级的任务优先执行。</li>
+<li>抢占式调度： 允许调度器在一个任务执行时抢占CPU，切换到更高优先级的任务。</li>
+</ul>
+<ol start="4">
+<li>多核和多线程：</li>
+</ol>
+<ul>
+<li>多核调度： 在多核系统中，调度器需要考虑如何分配任务到不同核心，以充分利用硬件资源。</li>
+<li>多线程调度： 对于支持多线程的系统，调度器需要考虑线程之间的调度和协作。</li>
+</ul>
+<ol start="5">
+<li>实时调度：</li>
+</ol>
+<ul>
+<li>实时调度算法： 适用于实时系统，确保任务在规定的时间内完成，以满足实时性要求。</li>
+</ul>
+<ol start="6">
+<li>负载平衡：</li>
+</ol>
+<ul>
+<li>负载平衡： 在多核系统中，调度器需要考虑如何平衡各个核心的负载，以充分利用系统资源。</li>
+</ul>
+<ol start="7">
+<li>调度器的实现：</li>
+</ol>
+<ul>
+<li>内核空间调度器： 在内核空间实现的调度器，负责操作系统层面的任务调度。</li>
+<li>用户空间调度器： 有些系统允许应用程序或用户态库自行实现调度，通过系统调用与内核进行交互。</li>
+</ul>
+<ol start="8">
+<li>性能指标：</li>
+</ol>
+<ul>
+<li>吞吐量： 每单位时间内完成的任务数量。</li>
+<li>响应时间： 从任务提交到任务开始执行的时间。</li>
+<li>公平性： 不同任务之间获得CPU时间的公平程度。</li>
+</ul>
+<ol start="9">
+<li>调度器的挑战：</li>
+</ol>
+<ul>
+<li>上下文切换开销： 频繁的上下文切换可能导致性能下降。</li>
+<li>负载不平衡： 不同核心的负载不均衡可能导致资源浪费。</li>
+</ul>
+<ol start="10">
+<li>动态调整：</li>
+</ol>
+<ul>
+<li>动态优先级调整： 根据任务的运行情况和系统状态，动态调整任务的优先级。</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="进程管理">进程管理<a href="#进程管理" class="hash-link" aria-label="进程管理的直接链接" title="进程管理的直接链接">​</a></h3>
+<blockquote>
+<p>进程管理是操作系统中的一个核心功能，负责创建、调度、终止和协调进程的执行。</p>
+</blockquote>
+<p>以下是进程管理相关概念：</p>
+<ol>
+<li>进程的创建：</li>
+</ol>
+<ul>
+<li>进程控制块（PCB）详解： PCB 包含了进程的各种信息，如进程状态、程序计数器、寄存器状态、内存指针、文件描述符等。</li>
+<li>进程地址空间： 进程在内存中的地址空间包括代码段、数据段、堆和栈等，每个进程有独立的地址空间，互不干扰。</li>
+<li>fork() 系统调用： 在 Unix/Linux 系统中，fork() 用于创建一个新的进程，新进程是原进程的副本。新进程称为子进程，原进程称为父进程。</li>
+<li>exec() 系统调用： exec() 用于加载一个新的程序文件，替代当前进程的内容。这样可以在一个进程中执行不同的程序。</li>
+</ul>
+<ol start="2">
+<li>进程调度：</li>
+</ol>
+<ul>
+<li>调度算法详解： 先来先服务（FCFS）、最短作业优先（SJF）、轮转调度（Round Robin）、多级反馈队列调度等不同算法的优缺点及适用场景。</li>
+<li>多核系统调度： 在多核系统中，需要考虑如何合理分配任务到不同的核心，以充分利用硬件资源。</li>
+<li>优先级调度： 进程可以被分配不同的优先级，高优先级的进程在调度时获得更多的 CPU 时间。</li>
+<li>实时调度： 对于实时系统，需要确保任务在规定的时间内完成。</li>
+</ul>
+<ol start="3">
+<li>进程同步和通信：</li>
+</ol>
+<ul>
+<li>互斥量详解： 用于保护共享资源，确保在同一时刻只有一个进程可以访问。</li>
+<li>信号量详解： 用于控制对共享资源的访问，可以实现进程间的同步。</li>
+<li>死锁和避免： 死锁是进程因为争夺资源而无法继续执行的状态，操作系统需要实现机制来检测和解决死锁。</li>
+</ul>
+<ol start="4">
+<li>进程挂起和唤醒：</li>
+</ol>
+<ul>
+<li>挂起状态详解： 进程被挂起时，其状态和内存内容被保存，但不占用 CPU 时间。挂起可以是主动（如进程等待某事件）或被动（如被调度器挂起）的。</li>
+<li>唤醒操作： 当挂起的进程被重新唤醒时，其状态和内存内容被还原，可以继续执行。</li>
+</ul>
+<ol start="5">
+<li>进程终止：</li>
+</ol>
+<ul>
+<li>正常终止和异常终止： 进程可以正常执行完成，也可以因为错误或异常情况被提前终止。</li>
+<li>进程退出码： 进程在终止时返回一个退出码，用于通知父进程它的执行结果。</li>
+<li>父子进程关系： 父进程通常需要等待子进程的终止，并获取其退出码。</li>
+</ul>
+<ol start="6">
+<li>进程管理的资源分配：</li>
+</ol>
+<ul>
+<li>CPU时间分配： 调度器根据进程的优先级、时间片等分配 CPU 时间。</li>
+<li>内存分配： 进程需要足够的内存空间，操作系统需要负责内存的分配和释放。</li>
+<li>文件和设备分配： 进程可能需要访问文件和设备资源，操作系统需要进行相应的管理。</li>
+</ul>
+<ol start="7">
+<li>守护进程：</li>
+</ol>
+<ul>
+<li>守护进程详解： 守护进程是在后台运行的进程，通常独立于用户会话，并执行系统任务如日志记录、定期维护等。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="如何创建进程">如何创建进程<a href="#如何创建进程" class="hash-link" aria-label="如何创建进程的直接链接" title="如何创建进程的直接链接">​</a></h4>
+<ol>
+<li>分配唯一的进程标识符（PID）：</li>
+</ol>
+<ul>
+<li>操作系统为新进程分配一个唯一的进程标识符，即 PID。PID 是用于唯一标识系统中每个进程的整数。</li>
+</ul>
+<ol start="2">
+<li>为进程分配资源：</li>
+</ol>
+<ul>
+<li>操作系统为新进程分配必需的资源，包括内存空间、文件描述符、寄存器等。这些资源通常在进程控制块（PCB）中进行记录。</li>
+</ul>
+<ol start="3">
+<li>初始化进程控制块（PCB）：</li>
+</ol>
+<ul>
+<li>操作系统创建一个数据结构，通常称为进程控制块（PCB），用于存储和管理进程的信息，如程序计数器、寄存器状态、进程状态等。</li>
+</ul>
+<ol start="4">
+<li>加载可执行文件：</li>
+</ol>
+<ul>
+<li>操作系统将进程的可执行文件或程序加载到分配给进程的内存中。这通常涉及将程序的代码段、数据段等部分加载到适当的内存地址。</li>
+</ul>
+<ol start="5">
+<li>设置程序计数器（PC）：</li>
+</ol>
+<ul>
+<li>操作系统将程序计数器（PC）设置为进程的起始地址，使其指向程序的入口点，从而使进程能够开始执行。</li>
+</ul>
+<ol start="6">
+<li>启动执行：</li>
+</ol>
+<ul>
+<li>操作系统通过将 CPU 控制权转移给新创建的进程，开始执行该进程。这可能涉及到上下文切换，其中操作系统保存当前进程的上下文，并加载新进程的上下文。</li>
+</ul>
+<ol start="7">
+<li>用户态和内核态的切换：</li>
+</ol>
+<ul>
+<li>操作系统将新进程从用户态切换到内核态，以便执行系统级操作，如访问硬件资源、进行系统调用等。</li>
+</ul>
+<ol start="8">
+<li>返回用户空间：</li>
+</ol>
+<ul>
+<li>一旦进程被加载并开始执行，操作系统将控制权返回给用户空间，使得进程能够执行其指定的任务。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="进程上下文">进程上下文<a href="#进程上下文" class="hash-link" aria-label="进程上下文的直接链接" title="进程上下文的直接链接">​</a></h4>
+<blockquote>
+<p>进程上下文是指操作系统维护的关于进程执行状态的信息，以便在进行进程切换时能够恢复和保存进程的状态。进程上下文包括了当前进程在执行过程中的所有关键信息，使得进程可以在被中断或被调度切换时能够无缝地恢复到之前的状态。</p>
+</blockquote>
+<ol>
+<li>相关概念：</li>
+</ol>
+<ul>
+<li>程序计数器（Program Counter，PC）： 记录了下一条要执行的指令的地址。</li>
+<li>寄存器状态： 包括通用寄存器、程序状态寄存器（PSR/FLAGS）等，记录了进程执行过程中的各种数据。</li>
+<li>栈指针（Stack Pointer，SP）： 指向进程运行时的栈顶，用于存储局部变量和函数调用信息。</li>
+<li>堆指针： 指向进程运行时的堆顶，用于动态内存分配。</li>
+<li>内存映射信息： 记录了进程的内存映射关系，包括代码段、数据段、堆、栈等。</li>
+<li>文件描述符表： 记录了进程打开的文件和网络连接等信息。</li>
+</ul>
+<ol start="2">
+<li>上下文切换过程：</li>
+</ol>
+<ul>
+<li>保存当前上下文： 在进程切换之前，操作系统会保存当前进程的上下文信息。这包括将寄存器状态、程序计数器等信息保存到该进程的进程控制块（PCB）中。</li>
+<li>加载新上下文： 在切换到新的进程时，操作系统会从该进程的 PCB 中加载保存的上下文信息，恢复寄存器状态、程序计数器等。</li>
+</ul>
+<ol start="3">
+<li>上下文切换的触发条件：</li>
+</ol>
+<ul>
+<li>中断： 当硬件或软件发生中断时，当前执行的进程的上下文会被保存，然后切换到中断服务程序的上下文。</li>
+<li>系统调用： 当进程请求操作系统提供的服务（例如文件读写、网络通信等），会触发系统调用，导致上下文切换。</li>
+<li>时钟中断： 定时器中断周期性地发生，触发操作系统的调度器进行进程切换。</li>
+</ul>
+<ol start="4">
+<li>用户态和内核态切换：</li>
+</ol>
+<ul>
+<li>用户态切换到内核态： 当进程需要进行系统调用或发生异常时，会从用户态切换到内核态。这时会保存用户态的上下文信息。</li>
+<li>内核态切换到用户态： 当系统调用或异常处理完成后，会从内核态切换回用户态，加载之前保存的用户态上下文。</li>
+</ul>
+<ol start="5">
+<li>进程的生命周期中的上下文变化：</li>
+</ol>
+<ul>
+<li>创建上下文： 当进程被创建时，需要初始化其上下文，包括设置初始的寄存器状态、堆栈等信息。</li>
+<li>执行上下文： 进程在执行过程中，不断更新上下文信息，如寄存器状态、程序计数器等。</li>
+<li>终止上下文： 当进程执行完成或被终止时，其上下文信息会被销毁。</li>
+</ul>
+<ol start="6">
+<li>上下文切换的开销：</li>
+</ol>
+<ul>
+<li>开销： 上下文切换是一个相对昂贵的操作，因为需要保存和加载大量寄存器状态，可能会导致缓存失效等性能问题。</li>
+<li>优化： 操作系统和硬件通过一些技术（如快速上下文切换、多核并发等）来减小上下文切换的开销。</li>
+</ul>
+<ol start="7">
+<li>进程上下文的安全性：</li>
+</ol>
+<ul>
+<li>安全性： 进程上下文中包含敏感信息，如密码、加密密钥等。操作系统需要采取措施来确保上下文的安全性，防止被非法获取。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="进程控制块-pcb">进程控制块 PCB<a href="#进程控制块-pcb" class="hash-link" aria-label="进程控制块 PCB的直接链接" title="进程控制块 PCB的直接链接">​</a></h4>
+<blockquote>
+<p>PCB（Process Control Block，进程控制块） 是操作系统中用于管理和维护进程信息的数据结构。每个进程都有一个对应的 PCB，它包含了关于进程状态、寄存器内容、内存分配、打开文件等重要信息。PCB 是操作系统对进程进行调度和管理的基础。</p>
+</blockquote>
+<ol>
+<li>进程标识信息：</li>
+</ol>
+<ul>
+<li>进程ID（PID）： 用于唯一标识系统中的每个进程。</li>
+<li>父进程ID： 记录创建该进程的父进程的ID。</li>
+</ul>
+<ol start="2">
+<li>进程状态信息：</li>
+</ol>
+<ul>
+<li>进程状态： 记录进程的当前状态，如就绪、运行、阻塞等。</li>
+<li>程序计数器（PC）： 存储下一条要执行的指令的地址。</li>
+<li>寄存器状态： 记录通用寄存器、程序状态寄存器（PSR/FLAGS）等的内容。</li>
+</ul>
+<ol start="3">
+<li>进程调度信息：</li>
+</ol>
+<ul>
+<li>优先级： 进程被调度时的优先级，用于决定其获得CPU时间的权重。</li>
+<li>调度队列指针： 进程在就绪队列中的位置，用于调度算法。</li>
+</ul>
+<ol start="4">
+<li>进程控制信息：</li>
+</ol>
+<ul>
+<li>进程所属用户： 标识进程属于哪个用户。</li>
+<li>进程创建时间： 记录进程被创建的时间戳。</li>
+<li>进程运行时间： 统计进程运行的总时间。</li>
+</ul>
+<ol start="5">
+<li>内存管理信息：</li>
+</ol>
+<ul>
+<li>基址和界限寄存器： 用于内存保护，限制进程访问的内存范围。</li>
+<li>页表指针： 存储进程的页表信息，用于虚拟内存管理。</li>
+</ul>
+<ol start="6">
+<li>文件管理信息：</li>
+</ol>
+<ul>
+<li>打开文件表： 记录进程打开的文件和相应的文件控制块（FCB）指针。</li>
+<li>当前工作目录： 进程当前所在的工作目录。</li>
+</ul>
+<ol start="7">
+<li>进程间通信信息：</li>
+</ol>
+<ul>
+<li>消息队列、信号量、共享内存等： 用于进程之间的通信和同步。</li>
+</ul>
+<ol start="8">
+<li>进程挂起和唤醒信息：</li>
+</ol>
+<ul>
+<li>挂起标志： 表示进程是否被挂起。</li>
+<li>挂起原因： 记录进程被挂起的原因，如等待I/O。</li>
+</ul>
+<ol start="9">
+<li>异常和中断处理信息：</li>
+</ol>
+<ul>
+<li>中断状态寄存器： 记录中断处理的状态信息。</li>
+<li>异常处理程序指针： 存储异常处理程序的入口地址。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="线程控制块-tcb">线程控制块 TCB<a href="#线程控制块-tcb" class="hash-link" aria-label="线程控制块 TCB的直接链接" title="线程控制块 TCB的直接链接">​</a></h4>
+<blockquote>
+<p>TCB（Thread Control Block，线程控制块） 是用于管理和维护线程信息的数据结构。与进程控制块（PCB）类似，TCB 专门用于描述线程的状态、上下文和相关信息。每个线程都有一个对应的 TCB，用于操作系统对线程进行调度和管理。</p>
+</blockquote>
+<ol>
+<li>线程标识信息：</li>
+</ol>
+<ul>
+<li>线程ID（TID）： 用于唯一标识系统中的每个线程。</li>
+<li>所属进程ID： 标识线程所属的进程的ID。</li>
+</ul>
+<ol start="2">
+<li>线程状态信息：</li>
+</ol>
+<ul>
+<li>线程状态： 记录线程的当前状态，如就绪、运行、阻塞等。</li>
+<li>程序计数器（PC）： 存储下一条要执行的指令的地址。</li>
+<li>寄存器状态： 记录通用寄存器、程序状态寄存器（PSR/FLAGS）等的内容。</li>
+</ul>
+<ol start="3">
+<li>线程调度信息：</li>
+</ol>
+<ul>
+<li>优先级： 线程被调度时的优先级，用于决定其获得CPU时间的权重。</li>
+<li>调度队列指针： 线程在就绪队列中的位置，用于调度算法。</li>
+</ul>
+<ol start="4">
+<li>线程控制信息：</li>
+</ol>
+<ul>
+<li>线程创建时间： 记录线程被创建的时间戳。</li>
+<li>线程运行时间： 统计线程运行的总时间。</li>
+</ul>
+<ol start="5">
+<li>内存管理信息：</li>
+</ol>
+<ul>
+<li>基址和界限寄存器： 用于内存保护，限制线程访问的内存范围。</li>
+<li>页表指针： 存储线程的页表信息，用于虚拟内存管理。</li>
+</ul>
+<ol start="6">
+<li>线程挂起和唤醒信息：</li>
+</ol>
+<ul>
+<li>挂起标志： 表示线程是否被挂起。</li>
+<li>挂起原因： 记录线程被挂起的原因，如等待I/O。</li>
+</ul>
+<ol start="7">
+<li>异常和中断处理信息：</li>
+</ol>
+<ul>
+<li>中断状态寄存器： 记录中断处理的状态信息。</li>
+<li>异常处理程序指针： 存储异常处理程序的入口地址。</li>
+</ul>
+<ol start="8">
+<li>安全性信息：</li>
+</ol>
+<ul>
+<li>权限和特权级别： 限制线程对系统资源的访问权限。</li>
+<li>安全上下文： 包括安全相关的信息，如加密密钥等。</li>
+</ul>
+<ol start="9">
+<li>线程间通信信息：</li>
+</ol>
+<ul>
+<li>线程私有变量： 存储线程私有的数据。</li>
+<li>共享资源信息： 记录线程对共享资源的访问情况。</li>
+</ul>
+<ol start="10">
+<li>其他信息：</li>
+</ol>
+<ul>
+<li>线程环境信息： 包括线程的环境变量、命令行参数等。</li>
+<li>线程状态变迁信息： 记录线程从创建到终止的状态变迁。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="浏览器如何创建js解释器线程">浏览器如何创建js解释器线程*<a href="#浏览器如何创建js解释器线程" class="hash-link" aria-label="浏览器如何创建js解释器线程*的直接链接" title="浏览器如何创建js解释器线程*的直接链接">​</a></h4>
+<blockquote>
+<p>当浏览器执行 JavaScript 代码时，通常会涉及到创建解释器线程来解释和执行 JavaScript 代码。</p>
+</blockquote>
+<p>以下是简要的流程：</p>
+<ol>
+<li>用户输入 JavaScript 代码：</li>
+</ol>
+<ul>
+<li>用户在浏览器中输入或触发与 JavaScript 相关的操作，例如在地址栏输入网址、点击按钮等。</li>
+</ul>
+<ol start="2">
+<li>HTML 解析和 DOM 构建：</li>
+</ol>
+<ul>
+<li>浏览器首先解析 HTML 文档，构建 DOM（文档对象模型）树，同时发现并加载 JavaScript 脚本。</li>
+</ul>
+<ol start="3">
+<li>创建解释器线程：</li>
+</ol>
+<ul>
+<li>当浏览器发现需要执行 JavaScript 代码时，它会创建一个 JavaScript 解释器线程。不同的浏览器使用不同的 JavaScript 引擎，例如 V8 引擎（Chrome）、SpiderMonkey（Firefox）、JavaScriptCore（Safari）等。</li>
+</ul>
+<ol start="4">
+<li>解释和执行 JavaScript 代码：</li>
+</ol>
+<ul>
+<li>解释器线程负责将 JavaScript 代码翻译成机器代码或字节码，并执行这些代码。执行期间，可能会涉及词法分析、语法分析、抽象语法树（AST）的构建，然后执行生成的中间表示。</li>
+</ul>
+<ol start="5">
+<li>与主线程的交互：</li>
+</ol>
+<ul>
+<li>JavaScript 解释器线程和浏览器的主线程之间可能需要进行交互。例如，解释器线程可能会更新 DOM、触发事件，或者通过 Web APIs 发起异步请求。</li>
+</ul>
+<ol start="6">
+<li>事件循环（Event Loop）：</li>
+</ol>
+<ul>
+<li>JavaScript 是单线程的，因此浏览器通过事件循环机制实现异步操作。当有异步操作（如定时器、网络请求）完成时，将触发回调函数，该回调函数将被添加到事件队列中等待执行。</li>
+</ul>
+<ol start="7">
+<li>处理异步任务：</li>
+</ol>
+<ul>
+<li>解释器线程在执行完当前的 JavaScript 任务后，会检查事件队列，如果有待执行的异步任务，就会调用相应的回调函数。</li>
+</ul>
+<ol start="8">
+<li>渲染更新（可选）：</li>
+</ol>
+<ul>
+<li>如果 JavaScript 代码修改了页面的结构或样式，浏览器可能需要触发重新布局（layout）和重绘（paint）过程，最终更新屏幕上的渲染结果。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="进程状态">进程状态<a href="#进程状态" class="hash-link" aria-label="进程状态的直接链接" title="进程状态的直接链接">​</a></h4>
+<blockquote>
+<p>在操作系统中，进程状态是指进程在其生命周期中所处的不同状态。进程可以经历多个状态，而其状态的改变通常是由不同的事件触发的。</p>
+</blockquote>
+<p>常见的进程状态包括：</p>
+<ol>
+<li>创建状态（New）：</li>
+</ol>
+<ul>
+<li>进程被创建但尚未开始执行。</li>
+<li>操作系统正在为进程分配资源，初始化 PCB（进程控制块）等数据结构。</li>
+</ul>
+<ol start="2">
+<li>就绪状态（Ready）：</li>
+</ol>
+<ul>
+<li>进程已准备好执行，等待被调度。</li>
+<li>进程已经获取了所有必需的资源，但由于处理器有限，还未被分配 CPU 时间。</li>
+</ul>
+<ol start="3">
+<li>运行状态（Running）：</li>
+</ol>
+<ul>
+<li>进程正在执行指令，占用 CPU 时间。</li>
+<li>在单处理器系统中，同一时刻只有一个进程处于运行状态。</li>
+</ul>
+<ol start="4">
+<li>阻塞状态（Blocked）：</li>
+</ol>
+<ul>
+<li>进程因等待某个事件（如 I/O 操作、信号）而暂时停止执行。</li>
+<li>进程在等待事件完成之前不能被调度执行。</li>
+</ul>
+<ol start="5">
+<li>终止状态（Terminated）：</li>
+</ol>
+<ul>
+<li>进程执行完成，或被提前终止。</li>
+<li>操作系统会释放进程占用的资源，回收 PCB 等数据结构。</li>
+</ul>
+<ol start="6">
+<li>挂起状态（Suspended）：</li>
+</ol>
+<ul>
+<li>进程被暂时从内存中移除，但保留其状态。</li>
+<li>可分为挂起就绪（Suspended-Ready）和挂起阻塞（Suspended-Blocked）两种状态。</li>
+</ul>
+<ol start="7">
+<li>唤醒状态：</li>
+</ol>
+<ul>
+<li>挂起状态的进程被重新放回内存，可以继续执行。</li>
+<li>通常是由于某个事件的发生，使得进程不再被阻塞。</li>
+</ul>
+<ol start="8">
+<li>就绪挂起状态和阻塞挂起状态：</li>
+</ol>
+<ul>
+<li>就绪挂起状态（Ready-Suspended）： 进程处于就绪状态，但被挂起，即不能被立即调度执行。</li>
+<li>阻塞挂起状态（Blocked-Suspended）： 进程处于阻塞状态，但被挂起，即不能被立即唤醒和执行。</li>
+</ul>
+<ol start="9">
+<li>新状态（New）：</li>
+</ol>
+<ul>
+<li>在某些系统中，进程创建后可能会经过一个新状态，表示刚刚被创建的进程。</li>
+</ul>
+<ol start="10">
+<li>就绪挂起、阻塞挂起状态的唤醒：</li>
+</ol>
+<ul>
+<li>这两个状态的进程在被唤醒后，会回到对应的就绪或阻塞状态，具体状态取决于其被挂起前的状态。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="进程切换">进程切换<a href="#进程切换" class="hash-link" aria-label="进程切换的直接链接" title="进程切换的直接链接">​</a></h4>
+<blockquote>
+<p>进程切换是操作系统中的一个关键概念，它指的是从一个正在运行的进程切换到另一个进程的过程。进程切换包括保存当前运行进程的上下文并加载下一个要执行的进程的上下文。这个过程通常由操作系统的调度器负责。</p>
+</blockquote>
+<ol>
+<li>保存当前进程的上下文（Context Switch）：</li>
+</ol>
+<ul>
+<li>将当前运行进程的寄存器状态、程序计数器（PC）、堆栈指针等上下文信息保存到该进程的 PCB（进程控制块）中。</li>
+<li>如果是多线程环境，可能还需要保存线程的 TCB（线程控制块）。</li>
+</ul>
+<ol start="2">
+<li>选择下一个要执行的进程：</li>
+</ol>
+<ul>
+<li>通过调度算法从就绪队列中选择下一个要执行的进程。</li>
+<li>调度算法可以是先来先服务（FCFS）、最短作业优先（SJF）、轮转调度（Round Robin）等。</li>
+</ul>
+<ol start="3">
+<li>加载下一个进程的上下文：</li>
+</ol>
+<ul>
+<li>从下一个要执行的进程的 PCB 中加载寄存器状态、程序计数器、堆栈指针等上下文信息。</li>
+<li>如果是多线程环境，加载相应线程的 TCB。</li>
+</ul>
+<ol start="4">
+<li>执行下一个进程：</li>
+</ol>
+<ul>
+<li>将控制权交给新选择的进程，使其开始执行。</li>
+<li>操作系统调度器可能会发出切换指令，将 CPU 控制权切换到新选择的进程。</li>
+</ul>
+<ol start="5">
+<li>切换完毕：</li>
+</ol>
+<ul>
+<li>当新进程开始执行后，进程切换过程就完成了。</li>
+<li>CPU 现在执行的是新选择的进程。</li>
+</ul>
+<ol start="6">
+<li>成本和开销：</li>
+</ol>
+<ul>
+<li>进程切换是一个相对昂贵的操作，因为需要保存和加载大量的上下文信息，可能导致缓存失效等性能问题。</li>
+<li>操作系统和硬件采用一些技术来降低进程切换的成本，如快速上下文切换、多核并发等。</li>
+</ul>
+<ol start="7">
+<li>特殊情况的切换：</li>
+</ol>
+<ul>
+<li>中断处理切换： 当发生中断时，操作系统可能需要切换到中断处理程序的上下文。</li>
+<li>系统调用切换： 当进程发起系统调用时，可能需要从用户态切换到内核态。</li>
+</ul>
+<ol start="8">
+<li>抢占和非抢占调度：</li>
+</ol>
+<ul>
+<li>抢占调度： 操作系统可以根据调度算法随时剥夺当前运行进程的 CPU 时间，切换到更高优先级的进程。</li>
+<li>非抢占调度： 只有在当前进程主动释放 CPU 或发生中断时才进行切换。</li>
+</ul>
+<ol start="9">
+<li>进程切换的频率：</li>
+</ol>
+<ul>
+<li>进程切换的频率与调度算法、系统负载等因素有关。频繁的切换可能会导致性能下降。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="进程通信">进程通信<a href="#进程通信" class="hash-link" aria-label="进程通信的直接链接" title="进程通信的直接链接">​</a></h4>
+<blockquote>
+<p>进程通信是指在多进程环境中，不同进程之间进行信息传递和数据交换的机制。进程通信允许在并发执行的进程之间共享信息，以便协调和合作完成任务。</p>
+</blockquote>
+<p>在操作系统中，有多种进程通信的方式，其中常见的包括：</p>
+<ol>
+<li>管道（Pipes）：</li>
+</ol>
+<ul>
+<li>单向通信： 管道是一个单向通信的机制，一个进程可以写入数据，另一个进程可以读取数据。</li>
+<li>用途： 通常用于具有父子关系的进程之间的通信。</li>
+</ul>
+<ol start="2">
+<li>命名管道（Named Pipes）：</li>
+</ol>
+<ul>
+<li>命名： 与管道类似，但是可以通过命名访问，即可在不相关的进程之间进行通信。</li>
+<li>用途： 可用于不同用户或不同应用程序之间的通信。</li>
+</ul>
+<ol start="3">
+<li>消息队列（Message Queues）：</li>
+</ol>
+<ul>
+<li>消息缓冲区： 进程可以通过消息队列向其他进程发送消息，消息包含数据和一个消息类型。</li>
+<li>用途： 支持进程之间的异步通信，适用于复杂的通信场景。</li>
+</ul>
+<ol start="4">
+<li>信号（Signals）：</li>
+</ol>
+<ul>
+<li>异步通知： 进程可以通过信号向其他进程发送异步通知，用于处理事件或异常情况。</li>
+<li>用途： 常用于处理外部事件、错误处理等。</li>
+</ul>
+<ol start="5">
+<li>共享内存（Shared Memory）：</li>
+</ol>
+<ul>
+<li>内存区域： 多个进程可以共享同一块内存区域，使得它们可以直接读写这块内存。</li>
+<li>用途： 适用于高性能的数据共享，但需要注意同步和互斥问题。</li>
+</ul>
+<ol start="6">
+<li>套接字（Sockets）：</li>
+</ol>
+<ul>
+<li>网络通信： 进程可以通过套接字在网络上进行通信，不仅限于同一台机器。</li>
+<li>用途： 适用于分布式系统中的进程通信。</li>
+</ul>
+<ol start="7">
+<li>文件映射（Memory-mapped Files）：</li>
+</ol>
+<ul>
+<li>虚拟内存映射： 将一个文件或内存对象映射到进程的地址空间，实现共享数据的通信。</li>
+<li>用途： 用于高效的文件读写和进程通信。</li>
+</ul>
+<ol start="8">
+<li>信号量（Semaphores）：</li>
+</ol>
+<ul>
+<li>计数器： 提供了一个计数器，用于多个进程之间的同步和互斥。</li>
+<li>用途： 控制对共享资源的访问，防止竞争条件。</li>
+</ul>
+<ol start="9">
+<li>流（Streams）：</li>
+</ol>
+<ul>
+<li>字节流： 通过字节流进行读写操作，允许进程之间传递数据。</li>
+<li>用途： 适用于父子进程通信等场景。</li>
+</ul>
+<ol start="10">
+<li>RPC（Remote Procedure Call）：</li>
+</ol>
+<ul>
+<li>远程调用： 允许一个程序调用另一个地址空间的过程，实现远程进程之间的通信。</li>
+<li>用途： 在分布式系统中实现进程之间的远程调用。</li>
+</ul>
+<ol start="11">
+<li>消息传递（Message Passing）：</li>
+</ol>
+<ul>
+<li>直接通信： 进程之间通过显式发送和接收消息进行通信。</li>
+<li>用途： 实现松耦合的进程通信，适用于并发和分布式环境。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="进程同步">进程同步<a href="#进程同步" class="hash-link" aria-label="进程同步的直接链接" title="进程同步的直接链接">​</a></h4>
+<ol>
+<li>定义：</li>
+</ol>
+<ul>
+<li>进程同步是指多个进程在执行过程中需要按照一定的顺序协调运行，以确保共享资源的正确访问和数据的一致性。</li>
+</ul>
+<ol start="2">
+<li>目的：</li>
+</ol>
+<ul>
+<li>防止进程间的竞争条件（Race Condition），即多个进程同时访问共享资源可能导致的问题。</li>
+<li>确保数据的一致性，避免因并发访问导致的数据错误。</li>
+</ul>
+<ol start="3">
+<li>常见的同步机制：</li>
+</ol>
+<ul>
+<li>互斥锁（Mutex）： 通过对共享资源进行加锁和解锁，确保在任意时刻只有一个进程能够访问共享资源。</li>
+<li>信号量（Semaphore）： 用于控制对有限资源的访问，允许多个进程同时访问，但数量有限。</li>
+<li>条件变量（Condition Variable）： 用于在进程之间传递信号，通知其他进程某个特定条件的发生。</li>
+</ul>
+<ol start="4">
+<li>实现方式：</li>
+</ol>
+<ul>
+<li>利用硬件指令（如测试-设置指令）或操作系统提供的原语，通过代码控制进程对共享资源的访问。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="进程并发">进程并发<a href="#进程并发" class="hash-link" aria-label="进程并发的直接链接" title="进程并发的直接链接">​</a></h4>
+<ol>
+<li>定义：</li>
+</ol>
+<ul>
+<li>进程并发是指多个进程在同一时刻执行，共享系统资源。并发不仅包括多任务的同时执行，还包括交替执行。</li>
+</ul>
+<ol start="2">
+<li>目的：</li>
+</ol>
+<ul>
+<li>提高系统资源的利用率，允许多个任务在相同的时间间隔内执行，从而提高整体吞吐量。</li>
+<li>通过分时操作系统，使用户感觉多个任务在同时进行。</li>
+</ul>
+<ol start="3">
+<li>特点：</li>
+</ol>
+<ul>
+<li>并发是指多个任务在宏观上交替执行，而在微观上可能同时执行。</li>
+<li>进程并发可以在多核处理器上通过真正的并行执行，或在单核处理器上通过时间片轮转的方式进行模拟。</li>
+</ul>
+<ol start="4">
+<li>实现方式：</li>
+</ol>
+<ul>
+<li>利用操作系统的调度机制，通过分时复用 CPU 时间，使多个进程在宏观上同时执行。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="线程同步">线程同步<a href="#线程同步" class="hash-link" aria-label="线程同步的直接链接" title="线程同步的直接链接">​</a></h4>
+<blockquote>
+<p>线程同步是指多个线程在执行过程中按照一定的顺序协调运行，以确保共享资源的正确访问和数据的一致性。在多线程环境中，线程同步非常重要，以避免竞争条件（Race Condition）和数据不一致性问题。</p>
+</blockquote>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="目的">目的：<a href="#目的" class="hash-link" aria-label="目的：的直接链接" title="目的：的直接链接">​</a></h5>
+<ol>
+<li>防止竞争条件：</li>
+</ol>
+<ul>
+<li>竞争条件指的是多个线程同时访问共享资源，由于执行顺序不确定而导致的问题。同步机制确保在任意时刻只有一个线程能够访问共享资源。</li>
+</ul>
+<ol start="2">
+<li>确保数据一致性：</li>
+</ol>
+<ul>
+<li>当多个线程同时访问和修改共享数据时，需要确保对数据的操作是原子的，以防止数据不一致性。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="常见的线程同步机制">常见的线程同步机制：<a href="#常见的线程同步机制" class="hash-link" aria-label="常见的线程同步机制：的直接链接" title="常见的线程同步机制：的直接链接">​</a></h4>
+<ol>
+<li>互斥锁（Mutex）：</li>
+</ol>
+<ul>
+<li>通过对共享资源加锁和解锁，确保在任意时刻只有一个线程能够访问共享资源。其他线程必须等待锁的释放。</li>
+</ul>
+<ol start="2">
+<li>信号量（Semaphore）：</li>
+</ol>
+<ul>
+<li>用于控制对有限资源的访问，允许多个线程同时访问，但数量有限。信号量可用于解决生产者-消费者问题等。</li>
+</ul>
+<ol start="3">
+<li>条件变量（Condition Variable）：</li>
+</ol>
+<ul>
+<li>用于在线程之间传递信号，通知其他线程某个特定条件的发生。常与互斥锁配合使用。</li>
+</ul>
+<ol start="4">
+<li>读写锁（Read-Write Lock）：</li>
+</ol>
+<ul>
+<li>区分读取和写入操作，允许多个线程同时读取共享资源，但只有一个线程能够写入。适用于读操作频繁、写操作较少的场景。</li>
+</ul>
+<ol start="5">
+<li>屏障（Barrier）：</li>
+</ol>
+<ul>
+<li>用于协调多个线程在某个点上汇合，等待所有线程都到达后再继续执行。适用于需要所有线程同步的场景。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="内存管理">内存管理<a href="#内存管理" class="hash-link" aria-label="内存管理的直接链接" title="内存管理的直接链接">​</a></h4>
+<blockquote>
+<p>内存管理是操作系统负责分配和回收计算机内存的一项核心任务。有效的内存管理是确保系统稳定性和性能的关键因素之一。</p>
+</blockquote>
+<p>以下是关于内存管理的一些基本概念：</p>
+<ol>
+<li>内存分配和释放：</li>
+</ol>
+<ul>
+<li>分配内存：<!-- -->
+<ul>
+<li>静态分配： 在程序编译时分配固定大小的内存。例如，全局变量和静态变量的内存分配。</li>
+<li>动态分配： 在程序运行时根据需要分配内存。常见的动态分配方式包括使用 malloc（C语言）、new（C++）、malloc、calloc、realloc（C语言和C++）、alloc（Python）等。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>释放内存：</li>
+</ol>
+<ul>
+<li>对于静态分配的内存，由系统自动回收。</li>
+<li>对于动态分配的内存，需要显式释放，否则可能导致内存泄漏。使用 free（C语言）、delete（C++）、dealloc（Objective-C）、del（Python）等。</li>
+</ul>
+<ol start="2">
+<li>内存碎片：</li>
+<li>内部碎片：</li>
+</ol>
+<ul>
+<li>动态分配的内存块可能比实际需要的要大，导致内存浪费。</li>
+</ul>
+<ol start="2">
+<li>外部碎片：</li>
+</ol>
+<ul>
+<li>已经分配给进程的内存中，由于释放和分配的不规律，留下了无法使用的小块零散内存。</li>
+</ul>
+<ol start="3">
+<li>虚拟内存：</li>
+</ol>
+<ul>
+<li>定义：<!-- -->
+<ul>
+<li>将物理内存和磁盘空间组合使用的技术。虚拟内存允许程序使用比物理内存更多的内存。</li>
+</ul>
+</li>
+<li>分页和分段：<!-- -->
+<ul>
+<li>分页： 将物理内存和虚拟内存划分为固定大小的页，实现数据的分页存储。</li>
+<li>分段： 将程序划分为若干段，每段具有不同的访问权限，实现数据的分段存储。</li>
+</ul>
+</li>
+<li>页面置换：<!-- -->
+<ul>
+<li>当物理内存不足时，操作系统通过页面置换算法将部分页面从物理内存移到磁盘，以释放空间。</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>内存保护：</li>
+</ol>
+<ul>
+<li>访问权限：<!-- -->
+<ul>
+<li>操作系统通过设置页表或段表，为每个内存区域指定访问权限，如读、写、执行等。</li>
+</ul>
+</li>
+<li>地址空间布局：<!-- -->
+<ul>
+<li>操作系统将进程的地址空间划分为代码段、数据段、堆、栈等区域，并规定它们的地址范围。</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>内存映射：</li>
+</ol>
+<ul>
+<li>文件映射：<!-- -->
+<ul>
+<li>将磁盘上的文件映射到进程的地址空间，使得文件可以被当做内存访问。</li>
+</ul>
+</li>
+<li>共享内存：<!-- -->
+<ul>
+<li>允许多个进程访问相同的物理内存，实现进程间通信。</li>
+</ul>
+</li>
+</ul>
+<ol start="6">
+<li>垃圾回收：</li>
+</ol>
+<ul>
+<li>自动内存管理：<!-- -->
+<ul>
+<li>通过垃圾回收机制自动识别和回收不再使用的内存，减少内存泄漏的风险。</li>
+</ul>
+</li>
+<li>垃圾回收算法：<!-- -->
+<ul>
+<li>常见的垃圾回收算法包括标记清除、引用计数、分代垃圾回收等。</li>
+</ul>
+</li>
+</ul>
+<ol start="7">
+<li>内存优化：</li>
+</ol>
+<ul>
+<li>内存对齐：<!-- -->
+<ul>
+<li>结构体和类成员的内存地址按照某个基本类型的大小对齐，提高内存读写效率。</li>
+</ul>
+</li>
+<li>缓存优化：<!-- -->
+<ul>
+<li>通过合理利用缓存，减少内存访问延迟，提高程序性能。</li>
+</ul>
+</li>
+<li>内存池：<!-- -->
+<ul>
+<li>预先分配一定数量的内存块，避免频繁的动态内存分配和释放。</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="磁盘驱动器">磁盘驱动器<a href="#磁盘驱动器" class="hash-link" aria-label="磁盘驱动器的直接链接" title="磁盘驱动器的直接链接">​</a></h4>
+<blockquote>
+<p>磁盘驱动器是计算机系统中用于存储和检索数据的关键部件，通常用于长期存储数据。它包含磁盘、磁头、电机、控制电路等组件，通过旋转的磁盘表面和移动的磁头来实现数据的读取和写入。</p>
+</blockquote>
+<p>以下是关于磁盘驱动器的一些基本概念：</p>
+<ol>
+<li>磁盘组成部分：</li>
+</ol>
+<ul>
+<li>磁盘：<!-- -->
+<ul>
+<li>磁盘驱动器通常包含一个或多个硬盘，每个硬盘都是由多个磁性的盘片组成。</li>
+</ul>
+</li>
+<li>磁头：<!-- -->
+<ul>
+<li>磁头是贴近磁盘表面的传感器，用于读取和写入数据。每个盘片上都有一个磁头。</li>
+</ul>
+</li>
+<li>扇区、磁道和柱面：<!-- -->
+<ul>
+<li>扇区： 磁盘上被划分的最小存储单元，存储固定数量的字节。</li>
+<li>磁道： 磁盘上同心圆的一个环，包含多个扇区。</li>
+<li>柱面： 相邻磁盘上的同一磁道形成的三维结构，包含多个磁道。</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>工作原理：</li>
+</ol>
+<ul>
+<li>旋转和寻道：<!-- -->
+<ul>
+<li>磁盘在高速电机的驱动下旋转，磁头则移动到指定的磁道上。这两个动作结合起来称为寻道。</li>
+</ul>
+</li>
+<li>读写操作：<!-- -->
+<ul>
+<li>磁头通过磁性感应读取或写入磁盘表面上的磁性颗粒，进行数据的读取和写入。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>磁盘调度</li>
+</ol>
+<ul>
+<li>最短寻道时间优先</li>
+<li>电梯算法</li>
+<li>最短定位时间优先</li>
+</ul>
+<ol start="5">
+<li>廉价冗余磁盘阵列 RAID Redundant Array of Inexpensive Disks</li>
+</ol>
+<ul>
+<li>优点<!-- -->
+<ul>
+<li>性能: 并行使用多个磁盘, 加快 I/O 时间</li>
+<li>容量: 多个磁盘大容量</li>
+<li>可靠性: 磁盘故障</li>
+</ul>
+</li>
+<li>组成: 处理器、内存、磁盘</li>
+<li>RAID 0（条带化）:<!-- -->
+<ul>
+<li>结构: 将数据分散存储在两个或更多的硬盘上，但不提供冗余。</li>
+<li>优点: 提高读写性能，因为数据可以并行处理。</li>
+<li>缺点: 如果任何一个硬盘故障，整个阵列的数据都将丢失。</li>
+<li>适用场景: 高性能需求，数据可靠性不是首要考虑因素的场景。</li>
+</ul>
+</li>
+<li>RAID 1（镜像）:<!-- -->
+<ul>
+<li>结构: 数据在两个硬盘上完全复制，形成“镜像”。</li>
+<li>优点: 提供很高的数据可靠性，如果一个硬盘故障，另一个可以立即接管。</li>
+<li>缺点: 成本较高（需要双倍存储容量）。</li>
+<li>适用场景: 数据安全性极为重要的应用。</li>
+</ul>
+</li>
+<li>RAID 5（带奇偶校验的条带化）:<!-- -->
+<ul>
+<li>结构: 数据和奇偶校验信息分散在三个或更多的硬盘上。</li>
+<li>优点: 提供数据冗余和改进的读取性能。</li>
+<li>缺点: 写入性能受到一定影响，恢复速度慢。</li>
+<li>适用场景: 需要平衡性能和可靠性的业务应用。</li>
+</ul>
+</li>
+<li>RAID 6（双奇偶校验）:<!-- -->
+<ul>
+<li>结构: 类似 RAID 5，但有两套奇偶校验系统，可以容忍两个硬盘同时故障。</li>
+<li>优点: 比 RAID 5 更高的数据安全性。</li>
+<li>缺点: 需要更多的硬盘，成本较高。</li>
+<li>适用场景: 对数据安全性有极高要求的场合。</li>
+</ul>
+</li>
+<li>RAID 10（或称 RAID 1+0）:<!-- -->
+<ul>
+<li>结构: 结合 RAID 0 和 RAID 1 的特点，先镜像后条带化。</li>
+<li>优点: 提供很高的数据可靠性和良好的读写性能。</li>
+<li>缺点: 成本高，至少需要四个硬盘。</li>
+<li>适用场景: 需要高性能和高可靠性的关键应用。</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="文件系统">文件系统<a href="#文件系统" class="hash-link" aria-label="文件系统的直接链接" title="文件系统的直接链接">​</a></h4>
+<blockquote>
+<p>从操作系统的角度来看，文件系统是操作系统用于管理和组织存储在计算机上的数据的一种机制。文件系统提供了一个抽象层，使得用户和应用程序可以通过简单的文件和目录结构来访问和管理存储设备上的数据。</p>
+</blockquote>
+<ol>
+<li>基本概念</li>
+</ol>
+<ul>
+<li>inode index node<!-- -->
+<ul>
+<li>定义: Inode（索引节点）是 UNIX 和类 UNIX 系统中的一种数据结构，用于存储文件的元数据，但不包含文件名或实际数据。</li>
+<li>内容: Inode 包含文件的大小、权限、所有者、创建和修改时间等信息，以及指向存储文件实际内容的数据块的指针。</li>
+</ul>
+</li>
+<li>位图<!-- -->
+<ul>
+<li>用途: 位图是一种简单高效的方式，用于管理磁盘空间的分配，如跟踪磁盘上的空闲和已用数据块。</li>
+<li>工作原理: 每个位代表磁盘上的一个块或 Inode 的状态（已用为 1、空闲为 0）。</li>
+</ul>
+</li>
+<li>数据块<!-- -->
+<ul>
+<li>定义: 数据块是文件存储的基本单位。文件系统将磁盘分割成一系列块，用于存储文件数据。</li>
+<li>大小: 块的大小通常固定（如 1KB、4KB），对文件系统的性能有重要影响</li>
+</ul>
+</li>
+<li>硬链接: 指向文件的 Inode，而不是文件名。删除原始文件不会影响到硬链接。</li>
+<li>软链接（符号链接）: 类似于快捷方式，包含指向另一个文件路径的文本。如果原始文件被删除或移动，软链接将失效。</li>
+<li>目录树<!-- -->
+<ul>
+<li>概念: 文件系统通过目录树的结构组织文件和文件夹，每个节点代表一个文件或目录。</li>
+<li>特点: 根目录是树的起点，每个目录项都包含文件/目录的名称和指向其 Inode 的指针</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>文件系统数据结构和访问方法</li>
+</ol>
+<ul>
+<li>数据结构: 文件系统使用如 B-树、哈希表等数据结构来存储和索引文件。</li>
+<li>访问方法: 包括顺序访问、直接访问、索引访问等，影响文件系统的性能和效率。</li>
+</ul>
+<ol start="3">
+<li>校验和（Checksum）</li>
+</ol>
+<ul>
+<li>定义: 校验和是一种用于检测数据完整性的机制。</li>
+<li>用途: 在文件传输或存储过程中，用于检测数据是否在传输或存储过程中发生变化。</li>
+</ul>
+<ol start="4">
+<li>崩溃一致性问题</li>
+</ol>
+<ul>
+<li>解决方案<!-- -->
+<ul>
+<li>文件检查程序</li>
+<li>日志</li>
+<li>软更新</li>
+<li>写时复制</li>
+<li>基于反向指针的一致性</li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>常见的文件系统类型</li>
+</ol>
+<ul>
+<li>基于磁盘的文件系统: 如 FAT（File Allocation Table）、NTFS（New Technology File System）、EXT（Extended File System）等。</li>
+<li>网络文件系统: 如 NFS（Network File System），允许通过网络访问远程文件。</li>
+<li>分布式文件系统: 如 Google 的 GFS（Google File System），为大规模数据存储设计。</li>
+<li>虚拟文件系统: 如 Linux 中的 VFS（Virtual File System），为不同的实际文件系统提供统一接口。</li>
+</ul>
+<ol start="6">
+<li>文件分配方法</li>
+</ol>
+<ul>
+<li>连续分配: 文件在磁盘上连续存储，易于实现，但容易产生碎片。</li>
+<li>链式分配: 文件分散存储，每个部分指向下一个部分的位置。</li>
+<li>索引分配: 使用索引块来跟踪文件的各个部分。</li>
+</ul>
+<ol start="7">
+<li>文件系统的性能优化</li>
+</ol>
+<ul>
+<li>缓存: 使用内存中的缓存来减少磁盘访问。</li>
+<li>碎片整理: 重新组织文件存储以减少碎片。</li>
+<li>日志或快照: 用于快速恢复和保护数据完整性。</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/docs/web/计算机科学/计算机组成原理"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">计算机组成原理</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/docs/web/计算机科学/编译原理"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">编译原理</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基础概念" class="table-of-contents__link toc-highlight">基础概念</a></li><li><a href="#系统启动" class="table-of-contents__link toc-highlight">系统启动</a></li><li><a href="#系统架构自顶向下" class="table-of-contents__link toc-highlight">系统架构（自顶向下）</a></li><li><a href="#核心概念" class="table-of-contents__link toc-highlight">核心概念</a><ul><li><a href="#时间分片" class="table-of-contents__link toc-highlight">时间分片</a></li><li><a href="#调度器" class="table-of-contents__link toc-highlight">调度器</a></li><li><a href="#进程管理" class="table-of-contents__link toc-highlight">进程管理</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/robbiemie" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://blog.csdn.net/u013243347" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project.</div></div></div></footer></div>
+</body>
+</html>

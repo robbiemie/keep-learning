@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-web/计算机科学/计算机组成原理" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">计算机组成原理 | 知识储备库</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://yangoogle.com/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://yangoogle.com/docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://yangoogle.com/docs/docs/web/计算机科学/计算机组成原理"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="计算机组成原理 | 知识储备库"><meta data-rh="true" name="description" content="计算机组成原理是计算机科学与工程中的一个重要领域，主要涉及计算机硬件和底层体系结构的原理、设计和实现。"><meta data-rh="true" property="og:description" content="计算机组成原理是计算机科学与工程中的一个重要领域，主要涉及计算机硬件和底层体系结构的原理、设计和实现。"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://yangoogle.com/docs/docs/web/计算机科学/计算机组成原理"><link data-rh="true" rel="alternate" href="https://yangoogle.com/docs/docs/web/计算机科学/计算机组成原理" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://yangoogle.com/docs/docs/web/计算机科学/计算机组成原理" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Web 基础知识点","item":"https://yangoogle.com/docs/docs/category/web-基础知识点"},{"@type":"ListItem","position":2,"name":"计算机组成原理","item":"https://yangoogle.com/docs/docs/web/计算机科学/计算机组成原理"}]}</script><link rel="alternate" type="application/rss+xml" href="/docs/blog/rss.xml" title="知识储备库 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/docs/blog/atom.xml" title="知识储备库 Atom Feed"><link rel="stylesheet" href="/docs/assets/css/styles.61e3011e.css">
+<script src="/docs/assets/js/runtime~main.d684f69a.js" defer="defer"></script>
+<script src="/docs/assets/js/main.21183c90.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs/img/logo.svg"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs/"><div class="navbar__logo"><img src="/docs/img/logo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs/img/logo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Robbie Yang</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/docs/category/web-基础知识点">Tutorial</a><a class="navbar__item navbar__link" href="/docs/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/robbiemie" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/docs/category/web-基础知识点">Web 基础知识点</a><button aria-label="折叠侧边栏分类 &#x27;Web 基础知识点&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/html/HTML基础">html</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/css/CSS 基础">css</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/js,ts/javascript">js,ts</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/编码/LRU缓存算法">编码</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/网络/DNS">网络</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/浏览器/浏览器架构设计">浏览器</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/cicd/Docker">cicd</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/构建工具/webpack/webpack模块化">构建工具</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/git/Git 基础">git</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/正则表达式/正则表达式">正则表达式</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/vue/MVVM">vue</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/react/react概述">react</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/reactNative/RN原理">reactNative</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/ssr/nuxt">ssr</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/typescript/ts/类型体操">typescript</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/docs/web/web性能优化/webpack分析优化">web性能优化</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/docs/web/计算机科学/计算机组成原理">计算机科学</a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/docs/web/计算机科学/计算机组成原理">计算机组成原理</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/操作系统">操作系统</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/编译原理">编译原理</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/docs/web/计算机科学/计算机网络">计算机网络</a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/docs/category/算法基础">算法基础</a><button aria-label="展开侧边栏分类 &#x27;算法基础&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/docs/category/摄影知识">摄影知识</a><button aria-label="展开侧边栏分类 &#x27;摄影知识&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/docs/category/web-基础知识点"><span>Web 基础知识点</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">计算机科学</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">计算机组成原理</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>计算机组成原理</h1></header>
+<blockquote>
+<p>计算机组成原理是计算机科学与工程中的一个重要领域，主要涉及计算机硬件和底层体系结构的原理、设计和实现。</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="冯诺依曼体系结构">冯诺依曼体系结构<a href="#冯诺依曼体系结构" class="hash-link" aria-label="冯诺依曼体系结构的直接链接" title="冯诺依曼体系结构的直接链接">​</a></h2>
+<blockquote>
+<p>冯·诺依曼体系结构，又称为冯·诺依曼架构，是计算机体系结构的一种基本设计思想，由物理学家约翰·冯·诺伊曼（John von Neumann）在1945年提出。冯·诺依曼体系结构在计算机科学历史上起到了里程碑的作用，成为现代计算机设计的基石。</p>
+</blockquote>
+<p>冯·诺依曼体系结构的主要特点包括：</p>
+<ol>
+<li>存储程序： 冯·诺依曼体系结构将程序和数据存储在同一存储器中，这称为存储程序概念。程序被视为一系列二进制指令，存储在内存中，计算机可以按照程序存储器中的地址顺序执行这些指令。</li>
+<li>二进制系统： 冯·诺依曼体系结构使用二进制来表示指令和数据，所有的操作都以二进制形式进行。</li>
+<li>存储器： 存储器被划分为两个部分，一部分用于存储指令（程序存储器），另一部分用于存储数据。这两个存储器可以独立访问。</li>
+<li>指令执行顺序： 冯·诺依曼计算机按照顺序执行存储在程序存储器中的指令，每条指令执行后，计算机自动转移到下一条指令。</li>
+<li>单一总线结构： 冯·诺依曼体系结构使用单一总线来连接中央处理器（CPU）、存储器和输入/输出设备，通过总线进行数据和控制信号的传输。</li>
+<li>中央处理单元（CPU）： CPU 包括算术逻辑单元（ALU）和控制单元（CU），负责执行指令和控制计算机的操作。</li>
+<li>按需取数和存储： 按照需要从存储器中取指令和数据，并在需要时将结果存储回存储器。</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="相关概念">相关概念<a href="#相关概念" class="hash-link" aria-label="相关概念的直接链接" title="相关概念的直接链接">​</a></h2>
+<ul>
+<li>带宽<!-- -->
+<ul>
+<li>定义: 数据传输通道的最大数据传输速率，通常以每秒传输的比特数（bps，比特每秒）或字节数（Bps，字节每秒）表示</li>
+<li>用途： 带宽用于描述通信通道的能力，即通道在单位时间内能够传输多少数据。</li>
+</ul>
+</li>
+<li>容量<!-- -->
+<ul>
+<li>定义: 存储设备或存储介质可以容纳的数据量，通常以字节数、千字节（KB）、兆字节（MB）、吉字节（GB）等表示</li>
+<li>用途： 容量用于描述存储设备的大小，即设备可以存储多少数据。在硬盘驱动器、内存模块、存储卡等设备中，容量表示可用于存储的总数据量。</li>
+</ul>
+</li>
+<li>吞吐量<!-- -->
+<ul>
+<li>定义: 在单位时间内完成的指令数</li>
+</ul>
+</li>
+<li>经典 CPU 性能公式: cpu 时间 = 指令数 ✖️ CPI(每条指令所需时间周期数) ✖️ 时钟周期时间</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="组成结构">组成结构<a href="#组成结构" class="hash-link" aria-label="组成结构的直接链接" title="组成结构的直接链接">​</a></h2>
+<ol>
+<li>中央控制单元(CPU)</li>
+</ol>
+<ul>
+<li>控制单元 (Control Unit): 负责指令的解码和执行，协调计算机的各个部件。</li>
+<li>算术逻辑单元 (Arithmetic Logic Unit, ALU): 执行算术和逻辑运算。</li>
+</ul>
+<ol start="2">
+<li>存储器(Memory)</li>
+</ol>
+<ul>
+<li>主存储器 (Main Memory/RAM): 用于存储程序和数据，是CPU能够直接访问的存储区域。</li>
+<li>辅助存储器 (Secondary Storage): 例如硬盘、固态硬盘 (SSD) 等，用于永久存储数据。</li>
+</ul>
+<ol start="3">
+<li>输入/输出系统(I/O System)</li>
+</ol>
+<ul>
+<li>输入设备: 用于接受用户输入的设备，如键盘、鼠标。</li>
+<li>输出设备: 用于向用户显示结果的设备，如显示器、打印机。</li>
+<li>I/O控制器: 管理计算机与外部设备之间的数据传输。</li>
+<li>I/O端口 (I/O Port): 用于连接计算机与外部设备的接口。</li>
+</ul>
+<ol start="4">
+<li>总线系统(Bus System)</li>
+</ol>
+<ul>
+<li>地址总线 (Address Bus): 传递CPU到主存储器的地址信息。</li>
+<li>数据总线 (Data Bus): 传递CPU和主存储器之间的数据。</li>
+<li>控制总线 (Control Bus): 传递控制信号，如读/写、时钟等。</li>
+</ul>
+<ol start="5">
+<li>存储器层次结构</li>
+</ol>
+<ul>
+<li>高速缓存 (Cache): 位于CPU和主存储器之间，用于加速数据访问。</li>
+<li>寄存器 (Register): 位于CPU内部，速度最快，用于存储临时数据和指令。</li>
+</ul>
+<ol start="6">
+<li>指令集架构(ISA)</li>
+</ol>
+<ul>
+<li>RISC (Reduced Instruction Set Computing): 指令集较小，每条指令执行时间短。</li>
+<li>CISC (Complex Instruction Set Computing): 指令集较大，每条指令执行时间可能较长。</li>
+</ul>
+<ol start="7">
+<li>系统总体结构</li>
+</ol>
+<ul>
+<li>单处理器系统: 包括一个CPU，用于执行单个任务。</li>
+<li>多处理器系统: 包括多个CPU，可同时执行多个任务。</li>
+</ul>
+<ol start="8">
+<li>时钟系统(Clock System)</li>
+</ol>
+<ul>
+<li>时钟 (Clock): 提供计时信号，同步各个部件的操作。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="cpu">CPU<a href="#cpu" class="hash-link" aria-label="CPU的直接链接" title="CPU的直接链接">​</a></h2>
+<blockquote>
+<p>中央处理器（Central Processing Unit, CPU）是计算机系统中的核心组件，它承担着执行程序和处理数据的关键任务。CPU 的主要作用包括：</p>
+</blockquote>
+<ol>
+<li>
+<p>指令解码和执行： CPU 从主存储器中读取指令，然后对这些指令进行解码，确定执行哪些操作。接着，它执行这些操作，这可能涉及算术运算、逻辑运算、数据传输等。</p>
+</li>
+<li>
+<p>运算能力： CPU 包含算术逻辑单元（Arithmetic Logic Unit, ALU），负责执行各种算术运算（加法、减法、乘法、除法等）和逻辑运算（与、或、非等）。</p>
+</li>
+<li>
+<p>控制计算机的操作： 控制单元（Control Unit）是 CPU 的一部分，负责协调和控制计算机的各个部件。它确保指令按照正确的顺序执行，并管理数据的流动。</p>
+</li>
+<li>
+<p>寄存器存储： CPU 包含多个寄存器，这些寄存器用于暂时存储指令和数据。寄存器速度非常快，是 CPU 内部进行数据处理的重要存储区域。</p>
+</li>
+<li>
+<p>高速缓存管理： CPU 通过高速缓存（Cache）提高对内存的访问速度。高速缓存存储了最常用的指令和数据，以提供更快的存取速度。</p>
+</li>
+<li>
+<p>中断处理： CPU 能够响应各种事件，如外部设备的输入、时钟中断等。当发生中断时，CPU 暂停当前任务，跳转到中断处理程序执行相应的操作。</p>
+</li>
+<li>
+<p>时序控制： CPU 中包含时钟（Clock），时钟发出的脉冲信号用于同步整个计算机系统的操作。时钟的频率决定了 CPU 的工作速度。</p>
+</li>
+<li>
+<p>支持指令集架构： CPU 实现了特定的指令集架构（Instruction Set Architecture, ISA），包括执行特定的指令集和提供相应的寻址方式。</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="多核cpu">多核CPU<a href="#多核cpu" class="hash-link" aria-label="多核CPU的直接链接" title="多核CPU的直接链接">​</a></h2>
+<blockquote>
+<p>CPU多核指的是一颗处理器芯片上集成了多个处理核心（CPU核心）。相比于单核处理器，多核处理器具有多个独立的处理单元，每个核心能够同时执行不同的指令序列。</p>
+</blockquote>
+<p>多核处理器的引入带来了一系列的优势和应用：</p>
+<ol>
+<li>并行处理： 多核处理器允许多个核心同时执行任务，实现并行处理。这对于那些可以被分解为独立子任务的应用程序来说尤为重要，如科学计算、图形渲染、多媒体处理等。</li>
+<li>提高性能： 多核处理器可以在相同的时间内执行更多的指令，从而提高整体性能。虽然单个核心的时钟频率可能不如单核处理器高，但多个核心的并行执行能力弥补了这一差距。</li>
+<li>资源隔离： 多核处理器允许操作系统将不同的任务分配到不同的核心上运行，实现资源的有效隔离。这有助于提高系统的稳定性和可靠性。</li>
+<li>能效优势： 在相同性能水平下，多核处理器通常比单核处理器更能有效地利用电能。这是因为多核处理器在单位时间内可以完成更多的工作，从而降低了每个核心的工作负载。</li>
+<li>多线程支持： 多核处理器对多线程应用程序更为友好。每个核心都能独立执行一个线程，从而提高多线程应用程序的整体性能。</li>
+<li>适应并发任务： 随着计算机应用的复杂性增加，许多任务需要并发处理。多核处理器能够更好地适应这种需求，加速处理大规模并行任务的能力。</li>
+<li>提高系统响应速度： 在多核系统中，一个核心执行繁重的计算任务不会影响其他核心执行其他任务，因此系统更能保持响应速度。</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="指令集">指令集<a href="#指令集" class="hash-link" aria-label="指令集的直接链接" title="指令集的直接链接">​</a></h2>
+<blockquote>
+<p>指令集是一组计算机处理器能够理解和执行的机器指令的集合。每个指令都对应处理器硬件上的一个操作，例如算术运算、逻辑运算、数据传输等。指令集架构定义了计算机体系结构的底层操作。</p>
+</blockquote>
+<p>指令集通常分为两类：</p>
+<ol>
+<li>
+<p>RISC（精简指令集计算机）指令集： RISC架构采用简化的指令集，每个指令的执行时间相对较短，处理器的时钟周期相对较快。这样设计的目的是提高指令的执行效率和降低硬件成本。</p>
+</li>
+<li>
+<p>CISC（复杂指令集计算机）指令集： CISC架构包含更多复杂的指令，一条指令可能执行多个操作，但每个指令的执行时间相对较长。CISC的设计目的是提供更高层次的抽象，减少程序员的负担，但也导致了更复杂的硬件结构。</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-arm指令集risc">1. ARM指令集（RISC）：<a href="#1-arm指令集risc" class="hash-link" aria-label="1. ARM指令集（RISC）：的直接链接" title="1. ARM指令集（RISC）：的直接链接">​</a></h3>
+<ul>
+<li>MOV (Move): 数据传送指令，将数据从一个寄存器复制到另一个寄存器。</li>
+</ul>
+<div class="language-assembly codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-assembly codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">MOV R0, R1   ; 将R1寄存器的值传送到R0寄存器</span><br></span></code></pre></div></div>
+<ul>
+<li>ADD (Addition): 加法指令，将两个寄存器中的值相加。</li>
+</ul>
+<div class="language-assembly codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-assembly codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ADD R0, R1, R2   ; 将R1和R2寄存器中的值相加，结果存储在R0中</span><br></span></code></pre></div></div>
+<ul>
+<li>B (Branch): 跳转指令，无条件跳转到指定地址。</li>
+</ul>
+<div class="language-assembly codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-assembly codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">B Label    ; 无条件跳转到标签Label处</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-x86指令集cisc">2. x86指令集（CISC）：<a href="#2-x86指令集cisc" class="hash-link" aria-label="2. x86指令集（CISC）：的直接链接" title="2. x86指令集（CISC）：的直接链接">​</a></h3>
+<ul>
+<li>MOV (Move): 数据传送指令，将数据从一个位置复制到另一个位置。</li>
+</ul>
+<div class="language-assembly codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-assembly codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">MOV AX, BX   ; 将BX的值传送到AX寄存器</span><br></span></code></pre></div></div>
+<ul>
+<li>ADD (Addition): 加法指令，将两个操作数相加。</li>
+</ul>
+<div class="language-assembly codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-assembly codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ADD AX, BX   ; 将AX寄存器和BX寄存器中的值相加，结果存储在AX中</span><br></span></code></pre></div></div>
+<ul>
+<li>JMP (Jump): 跳转指令，无条件跳转到指定地址。</li>
+</ul>
+<div class="language-assembly codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-assembly codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">JMP Label    ; 无条件跳转到标签Label处</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="总线系统">总线系统<a href="#总线系统" class="hash-link" aria-label="总线系统的直接链接" title="总线系统的直接链接">​</a></h2>
+<blockquote>
+<p>总线系统是计算机内部各个组件之间进行数据传输的通信系统。总线是一组用于传输信息的电子线路，将计算机内部的各个部件连接起来，使它们能够协同工作。</p>
+</blockquote>
+<p>总线系统包括以下几个主要方面：</p>
+<ol>
+<li>
+<p>地址总线（Address Bus）： 地址总线是用于传输地址信息的电子线路。它决定了CPU对内存和外设的寻址范围，即计算机可以寻址的内存和外设地址的总数。例如，一个32位地址总线可以寻址$2^<!-- -->32<!-- -->$个不同的地址。</p>
+</li>
+<li>
+<p>数据总线（Data Bus）： 数据总线是用于传输数据的电子线路。它传输CPU和内存、I/O设备之间的二进制数据。数据总线的宽度（比特数）决定了一次可以传输的数据量，例如，一个32位数据总线可以同时传输32位（4字节）的数据。</p>
+</li>
+<li>
+<p>控制总线（Control Bus）： 控制总线是用于传输控制信号的电子线路。它传输指令、时钟、读/写信号等控制信息，用于协调和控制各个部件的操作。控制总线也包括一些特定的信号，如中断请求、总线请求等。</p>
+</li>
+</ol>
+<p>总线系统的工作过程如下：</p>
+<ul>
+<li>
+<p>写操作： 当CPU要向内存或外设写入数据时，CPU将地址信息放入地址总线，将数据放入数据总线，并通过控制总线发送写入信号。接收到这些信号的内存或外设将相应的数据写入指定地址。</p>
+</li>
+<li>
+<p>读操作： 当CPU需要从内存或外设读取数据时，CPU将地址信息放入地址总线，并通过控制总线发送读取信号。内存或外设将相应地址处的数据放入数据总线，CPU读取这些数据。</p>
+</li>
+<li>
+<p>控制信号： 控制总线负责传输各种控制信号，例如时钟信号用于同步各个部件的操作，读/写信号表示当前是读取还是写入操作，中断请求信号用于通知CPU有中断事件等。</p>
+</li>
+</ul>
+<p>总线系统的性能和效率对整个计算机系统的运行速度有重要影响。总线宽度的增加可以提高一次性传输的数据量，从而加快数据传输速度。总线的设计也会受到计算机体系结构中内存层次结构的影响，因为不同层次的存储设备可能需要不同速度和宽度的总线。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="时钟系统">时钟系统<a href="#时钟系统" class="hash-link" aria-label="时钟系统的直接链接" title="时钟系统的直接链接">​</a></h2>
+<blockquote>
+<p>时钟系统在计算机中起着关键的作用，它提供了一个基准时序，用于同步和协调计算机系统中各个部件的工作。时钟系统包括时钟源、时钟信号和时钟频率等组成部分。</p>
+</blockquote>
+<p>以下是时钟系统的主要概念和作用：</p>
+<ol>
+<li>
+<p>时钟源（Clock Source）： 时钟源是时钟系统的根源，它提供了计时脉冲。在现代计算机中，通常使用晶体振荡器作为时钟源。晶体振荡器是一种高稳定性的电子元件，它可以产生固定频率的振荡信号，作为计算机的主时钟。</p>
+</li>
+<li>
+<p>时钟信号（Clock Signal）： 时钟信号是由时钟源发出的脉冲信号，它以固定的频率周期性地变化。时钟信号的变化用于同步和触发计算机内部各个组件的操作。</p>
+</li>
+<li>
+<p>时钟频率（Clock Frequency）： 时钟频率表示时钟信号每秒的脉冲次数，通常以赫兹（Hz）为单位。时钟频率越高，计算机内部的操作速度越快。时钟频率直接影响到计算机的性能，因此提高时钟频率是提升计算机性能的一种方法。</p>
+</li>
+<li>
+<p>时钟周期（Clock Cycle）： 时钟周期是指时钟信号的一个完整周期，即从一个上升沿到下一个上升沿的时间。时钟周期的倒数就是时钟频率，因为频率是周期的倒数。</p>
+</li>
+<li>
+<p>时钟同步： 时钟信号的同步性质确保了计算机内部各个部件在相同的时刻执行相应的操作。通过时钟同步，计算机可以按照协调的时序执行指令和传输数据。</p>
+</li>
+<li>
+<p>时钟分频（Clock Divider）： 有时候，为了适应不同部件的工作速度，计算机会使用时钟分频器将主时钟信号分频，以产生不同频率的时钟信号，以供不同部件使用。</p>
+</li>
+<li>
+<p>时钟周期的计算： 时钟周期的计算方式为时钟周期（秒） = 1 / 时钟频率（赫兹）。</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="gpu">GPU<a href="#gpu" class="hash-link" aria-label="GPU的直接链接" title="GPU的直接链接">​</a></h2>
+<ul>
+<li>与 cpu 的通信: 通过共享内存(一般为主内存)进行通信</li>
+<li>大模型训练为什么使用 GPU 和不是 CPU<!-- -->
+<ul>
+<li>并行计算: GPU 相比 CPU 拥有更多核心. 消费级 gpu 拥有几千个核心, 高端 gpu 拥有几万个核心, 而 cpu 一般只有两位数的核心</li>
+<li>高带宽内存: GPU 拥有高带宽图形内存, 而 CPU 只有微小的高速缓存. 因此 gpu 可以进行大量数据的读写</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="计算机寻址">计算机寻址<a href="#计算机寻址" class="hash-link" aria-label="计算机寻址的直接链接" title="计算机寻址的直接链接">​</a></h2>
+<blockquote>
+<p>计算机寻址是指确定存储器中某个位置的过程。计算机通过使用地址来唯一标识存储器中的每个单元。地址是一个数字，它表示存储器中的特定位置。</p>
+</blockquote>
+<p>计算机寻址的方式取决于体系结构和寻址模式，以下是一些常见的寻址方式：</p>
+<ol>
+<li>直接寻址（Direct Addressing）： 最简单的寻址方式，指令中包含了要访问的存储器地址。例如，LOAD 1000 表示从地址为1000的存储单元加载数据。</li>
+<li>间接寻址（Indirect Addressing）： 指令中包含一个地址，该地址指向存储器中的另一个地址，从而获取数据。这允许间接引用存储器位置。</li>
+<li>基址寻址（Base Addressing）： 使用基址寄存器中的值与指令中的偏移量相加，以计算实际的存储器地址。这允许程序在一个基本地址上定义数据结构，然后通过偏移量来访问不同的元素。</li>
+<li>相对寻址（Relative Addressing）： 使用相对于当前指令位置的偏移量，而不是绝对地址。这种方式通常用于实现跳转或条件分支。</li>
+<li>索引寻址（Index Addressing）： 类似于基址寻址，但是使用一个索引寄存器的值与指令中的偏移量相加。索引寻址允许更灵活地处理数组或表。</li>
+<li>堆栈寻址（Stack Addressing）： 使用堆栈的数据结构，栈指针指示栈的当前位置。通常用于存储临时数据和实现子程序调用。</li>
+<li>寄存器寻址（Register Addressing）： 数据直接存储在寄存器中，指令中使用寄存器的编号来访问数据。</li>
+</ol>
+<p>这些寻址方式的选择取决于计算机的体系结构和指令集设计。在程序执行时，计算机根据指令中的地址信息，通过总线系统访问存储器中的数据。寻址方式的设计影响了计算机的灵活性、性能和编程的便捷性。不同的计算机体系结构和架构可能采用不同的寻址方式。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="冯诺依曼瓶颈">冯诺依曼瓶颈<a href="#冯诺依曼瓶颈" class="hash-link" aria-label="冯诺依曼瓶颈的直接链接" title="冯诺依曼瓶颈的直接链接">​</a></h2>
+<ul>
+<li>定义: 由计算机内存结构引起的性能瓶颈</li>
+<li>原因<!-- -->
+<ul>
+<li>存储器瓶颈： 冯·诺依曼架构中，存储器（内存）通常是计算机性能的瓶颈之一。CPU 与内存之间的数据传输速度相对较慢，特别是在大规模数据处理时，CPU 可能需要等待数据的加载或存储操作完成，从而导致性能瓶颈。</li>
+<li>带宽瓶颈： 单一总线结构限制了数据在计算机内部的传输带宽。这可能导致在大规模并行操作或对大量数据进行高速处理时，总线成为性能瓶颈。</li>
+<li>时钟频率瓶颈： 冯·诺依曼架构下，时钟频率的提升曾是提高计算机性能的主要途径。然而，由于功耗和散热等问题，时钟频率的进一步提高变得困难，这导致了时钟频率瓶颈。</li>
+<li>能效瓶颈： 随着计算机应用的多样化和对能效的需求增加，冯·诺依曼架构在能效方面存在一些限制。例如，某些计算任务可能需要定制化的硬件架构以提高能效。</li>
+<li>复杂性瓶颈： 冯·诺依曼架构的通用性也带来了复杂性。在一些特定应用场景下，需要更专门化的硬件来提高性能和效率，而通用计算机架构可能显得过于复杂。</li>
+<li>安全性瓶颈： 冯·诺依曼架构的设计并没有特别强调安全性。因此，在当前计算环境中，对于一些安全性问题，如恶意软件攻击和数据泄漏，冯·诺依曼架构可能会面临一定的挑战。</li>
+</ul>
+</li>
+<li>优化<!-- -->
+<ul>
+<li>高速缓存: 减少内存访问次数</li>
+<li>多通道内存: 提高内存总带宽</li>
+<li>高带宽总线</li>
+<li>并行执行多个指令: pipeline, 超标量和乱序执行</li>
+<li>异步传输: 允许外设和主内存在不同的时钟域中工作，减少对总线的竞争，提高数据传输效率</li>
+<li>新的存储技术: 提升内存读写速度</li>
+<li>并行计算和分布式计算</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="pipeline-流水线架构">pipeline 流水线架构<a href="#pipeline-流水线架构" class="hash-link" aria-label="pipeline 流水线架构的直接链接" title="pipeline 流水线架构的直接链接">​</a></h2>
+<blockquote>
+<p>流水线架构（Pipeline Architecture）是一种<strong>计算机处理器设计</strong>的方式，通过将指令执行划分为多个阶段，并在每个阶段使用专门的硬件来执行部分任务，以提高指令的执行效率。这种设计方式使得多个指令能够在同一时间在不同阶段同时进行处理，从而提高了整体的吞吐量。</p>
+</blockquote>
+<p>流水线架构通常包括以下几个阶段：</p>
+<ol>
+<li>取指（IF - Instruction Fetch）： 从内存中取得下一条指令。</li>
+<li>译码（ID - Instruction Decode）： 对指令进行译码，确定执行的操作。</li>
+<li>执行（EX - Execution）： 执行指令的操作，可能包括算术运算、逻辑运算等。</li>
+<li>访存（MEM - Memory Access）： 如果需要访问内存，则在这个阶段进行读写内存的操作。</li>
+<li>写回（WB - Write Back）： 将执行阶段得到的结果写回寄存器文件。</li>
+</ol>
+<p>应用场景</p>
+<ol>
+<li>通用计算领域： 流水线架构广泛应用于通用计算领域，包括个人计算机、工作站和服务器等。处理器通过流水线架构可以更高效地执行一系列指令，提高整体性能。</li>
+<li>嵌入式系统： 流水线架构在嵌入式系统中也得到广泛应用，因为它能够提供高性能和能效的组合。嵌入式系统包括智能手机、平板电脑、物联网设备等。</li>
+<li>高性能计算（HPC）： 流水线架构对于高性能计算应用非常重要，因为在科学计算、模拟和数据处理等场景中，处理器需要高吞吐量和高效率，而流水线能够提供这种能力。</li>
+<li>图形处理单元（GPU）： 许多现代GPU采用了流水线架构，用于并行处理图形和通用计算任务。流水线能够使得GPU同时处理多个图形或计算任务，提高整体性能。</li>
+<li>网络处理器： 在网络设备和通信领域，流水线架构也常被使用，以处理大量的数据包和网络通信任务。</li>
+<li>数字信号处理器（DSP）： 流水线架构在DSP领域也很常见，用于处理数字信号、音频和图像等领域的信号处理任务。</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="目前主流计算机架构">目前主流计算机架构<a href="#目前主流计算机架构" class="hash-link" aria-label="目前主流计算机架构的直接链接" title="目前主流计算机架构的直接链接">​</a></h2>
+<blockquote>
+<p>x86_64（64位x86）和ARM架构是当前主流的<strong>计算机架构</strong>。这两种架构在不同领域和设备上广泛应用，涵盖了个人计算机、服务器、移动设备、嵌入式系统等各个领域。</p>
+</blockquote>
+<ul>
+<li>
+<p>x86_64（64位x86）架构：</p>
+<ul>
+<li>应用领域： 个人计算机、工作站、服务器等。</li>
+<li>特点： x86_64架构是x86架构的64位扩展，提供更大的内存地址空间和寄存器位宽，支持更复杂的指令集。主要生产厂商包括Intel和AMD。</li>
+</ul>
+</li>
+<li>
+<p>ARM架构：</p>
+<ul>
+<li>应用领域： 移动设备（如智能手机、平板电脑）、嵌入式系统、服务器、物联网设备等。</li>
+<li>特点： ARM架构设计注重低功耗、高性能的特点，适用于移动设备等对能效要求较高的场景。ARM架构有多个版本，包括ARMv7、ARMv8等，其中ARMv8引入了64位指令集（AArch64），提供更大的地址空间。</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="x86-架构">x86 架构<a href="#x86-架构" class="hash-link" aria-label="x86 架构的直接链接" title="x86 架构的直接链接">​</a></h3>
+<blockquote>
+<p>x86架构是一种基于Intel 8086处理器的指令集架构，它最初由Intel推出，并成为个人计算机领域的主流架构。</p>
+</blockquote>
+<p>以下是关于x86_64架构的一些详细信息：</p>
+<ol>
+<li>历史背景： x86架构最早出现于Intel的8086处理器，于1978年推出。随着时间的推移，x86架构逐渐演进，包括80286、80386、80486等多个版本，其中80386是首个支持32位操作的处理器。</li>
+<li>指令集架构： x86指令集是一种复杂的CISC（复杂指令集计算机）指令集，包含大量的指令和寄存器。x86指令集在历史上逐步扩展，包括对浮点运算、SIMD指令、多核心处理等方面的增强。</li>
+<li>寄存器： x86架构包括通用寄存器、段寄存器、标志寄存器等。通用寄存器的位宽逐步扩展，最初是16位，后来发展到32位和64位。x86_64架构引入了一组新的64位通用寄存器。</li>
+<li>地址空间： x86架构的物理内存寻址能力取决于具体的版本，但在32位模式下通常是4GB。在64位模式下，x86_64提供了更大的虚拟地址空间，可以支持极大的物理内存容量。</li>
+<li>操作模式： x86架构支持多种操作模式，其中实模式、保护模式和长模式是最为重要的。长模式是x86_64架构引入的64位模式，允许操作系统和应用程序充分利用64位寄存器和指令。</li>
+<li>系统调用和调用约定： x86架构使用一定的系统调用号和调用约定，操作系统通过这些系统调用提供服务。调用约定规定了函数参数传递、栈的使用方式等规则。</li>
+<li>主要生产商： 主要生产x86架构处理器的公司包括Intel和AMD。它们推出的处理器被广泛应用于个人计算机、服务器、工作站等领域。</li>
+<li>应用领域： x86架构最初用于个人计算机，但随着时间的推移，它逐渐扩展到服务器、工作站、嵌入式系统等各种领域。几乎所有主流的操作系统，包括Windows、Linux、macOS等，都支持x86架构。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="arm架构">ARM架构<a href="#arm架构" class="hash-link" aria-label="ARM架构的直接链接" title="ARM架构的直接链接">​</a></h3>
+<blockquote>
+<p>ARM架构是一种基于RISC（精简指令集计算机）设计思想的指令集架构，由ARM Holdings公司开发。ARM架构的设计注重低功耗、高性能、成本效益和可伸缩性，使其在移动设备、嵌入式系统和其他领域得到广泛应用。</p>
+</blockquote>
+<p>以下是关于ARM架构的一些基本信息:</p>
+<ol>
+<li>设计思想： ARM（Acorn RISC Machine）架构采用RISC设计思想，即通过精简指令集、提高执行效率和降低功耗来提高性能。ARM的设计目标是在功耗有限的情况下实现高性能。</li>
+<li>指令集架构： ARM指令集被设计为简单、高效，并且具有可伸缩性。最初是32位的，后来推出了64位的版本（ARMv8-A），为更大的内存和更复杂的计算任务提供了支持。</li>
+<li>寄存器： ARM架构的寄存器集包括通用寄存器、程序计数器、状态寄存器等。通用寄存器的数量通常较少，这是为了降低指令的复杂度和提高执行效率。</li>
+<li>地址空间： ARM架构提供了较大的虚拟地址空间，具体取决于版本。在32位模式下，通常支持4GB的虚拟地址空间，而64位版本则支持更大的地址空间。</li>
+<li>操作模式： ARM架构支持不同的操作模式，包括用户模式、系统模式、中断模式等。这些模式允许CPU在不同的执行环境下工作，提供了更好的安全性和隔离性。</li>
+<li>应用领域： ARM架构最初广泛应用于移动设备，如智能手机和平板电脑。随着技术的发展，ARM架构也被广泛应用于嵌入式系统、物联网设备、网络设备、家电和汽车等领域。</li>
+<li>主要生产商： ARM架构的许可模式允许其他公司许可ARM的设计，并根据需要进行定制。ARM Holdings公司本身不生产芯片，而是通过合作伙伴的许可来推动ARM架构的广泛应用。主要的ARM架构芯片制造商包括英特尔、高通、苹果、三星、华为等。</li>
+<li>生态系统： ARM架构建立了庞大的生态系统，包括丰富的软件和工具支持。这使得开发人员能够更容易地在ARM架构上进行软件开发，从而推动了ARM在不同领域的广泛应用。</li>
+</ol></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/docs/web/web性能优化/前端性能指标"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">前端性能指标</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/docs/web/计算机科学/操作系统"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">操作系统</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#冯诺依曼体系结构" class="table-of-contents__link toc-highlight">冯诺依曼体系结构</a></li><li><a href="#相关概念" class="table-of-contents__link toc-highlight">相关概念</a></li><li><a href="#组成结构" class="table-of-contents__link toc-highlight">组成结构</a></li><li><a href="#cpu" class="table-of-contents__link toc-highlight">CPU</a></li><li><a href="#多核cpu" class="table-of-contents__link toc-highlight">多核CPU</a></li><li><a href="#指令集" class="table-of-contents__link toc-highlight">指令集</a><ul><li><a href="#1-arm指令集risc" class="table-of-contents__link toc-highlight">1. ARM指令集（RISC）：</a></li><li><a href="#2-x86指令集cisc" class="table-of-contents__link toc-highlight">2. x86指令集（CISC）：</a></li></ul></li><li><a href="#总线系统" class="table-of-contents__link toc-highlight">总线系统</a></li><li><a href="#时钟系统" class="table-of-contents__link toc-highlight">时钟系统</a></li><li><a href="#gpu" class="table-of-contents__link toc-highlight">GPU</a></li><li><a href="#计算机寻址" class="table-of-contents__link toc-highlight">计算机寻址</a></li><li><a href="#冯诺依曼瓶颈" class="table-of-contents__link toc-highlight">冯诺依曼瓶颈</a></li><li><a href="#pipeline-流水线架构" class="table-of-contents__link toc-highlight">pipeline 流水线架构</a></li><li><a href="#目前主流计算机架构" class="table-of-contents__link toc-highlight">目前主流计算机架构</a><ul><li><a href="#x86-架构" class="table-of-contents__link toc-highlight">x86 架构</a></li><li><a href="#arm架构" class="table-of-contents__link toc-highlight">ARM架构</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/robbiemie" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://blog.csdn.net/u013243347" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project.</div></div></div></footer></div>
+</body>
+</html>
